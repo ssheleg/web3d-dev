@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | Pack | `web3d-dev` |
-| Version | `0.1.1` |
+| Version | `0.1.2` |
 | Skills | `web3d-runtime`, `web3d-assets`, `web3d-animation` |
 | License | MIT |
 | Source | https://github.com/ssheleg/web3d-dev |

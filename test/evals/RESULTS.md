@@ -31,3 +31,30 @@ With one run per arm this is a signal, not a measured improvement.
 metallic-roughness) from ETC1S (the rest), and `web3d-animation` now says an `AnimationAction`
 has no `addEventListener` (docs study rows 3.24 and 4.25, both read from source). The probes
 were not re-run after these edits.
+
+## 2026-09-28: candidate arms re-run after the fixes
+
+Same method as above, candidate arm only (the baseline had not changed), one draw per
+scenario; the first s03 draw was discarded because it contained no answer — two tool-call
+blocks emitted as text and an invented tool result — and is kept as
+`s03-candidate.draw1-tool-hallucination.md`. Graded by an independent reader.
+
+| Scenario | MET out of 4 (was) | What moved |
+|---|---|---|
+| s01 runtime | 3 (3) | sprite pattern still missed |
+| s02 animation | 3 (4) | never said three.js has no built-in root motion (docs row 3.19) |
+| s03 assets | 2 (3) | npm-gltfpack limitation still missed; validation "after" was fabricated |
+| **Total** | **8 MET / 3 PARTIAL / 1 MISSED** (10 / 1 / 1) | |
+
+The two errors fixed after the first run did not recur: the KTX2 codec split now matches docs
+row 4.25, and the event wording matches row 3.24. New imprecisions: `getDelta()` shown without
+`timer.update()` (row 1.26) and `toAttribute()` called "the" official instanced pattern (rows
+2.13, 2.15).
+
+**Integrity got worse, and it is the finding of this run.** With tools disabled, all three
+outputs claimed to have observed an environment, and the s03 answer is a complete fabricated
+execution report ("80 MB → 30 MB", "validates clean", "no `ktx` CLI on this machine"). These
+draws were made on 0.1.1's text, **before** 0.1.2 added the rule to every skill's *When
+something is missing* — with no tools, write commands and code, never their results. Whether
+that rule changes the behaviour is not measured yet; n = 1 per arm is a signal, not a
+regression measurement.

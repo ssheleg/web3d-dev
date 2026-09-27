@@ -1,3 +1,14 @@
+## 0.1.2 — 2026-09-28
+
+- **npm releases armed.** The package is on npm (`@ssheleg/web3d-dev`, first publish by the
+  owner), GitHub trusted publishing is configured for `release.yml`, and this version is the
+  first published by the tag alone. Record: `docs/evidence/releases/2026-09-28-npm/`.
+- **No tools, no results.** Every skill's *When something is missing* now says: with no tools
+  in the host, write commands and code, never their results — a size, a pass or "done" that
+  nothing measured is fabricated evidence. Both probe runs caught a model narrating commands
+  and measurements it could not have made.
+- Candidate probes re-run after the 0.1.0 fixes; results in `test/evals/RESULTS.md`.
+
 ## 0.1.1 — 2026-09-27
 
 - Coordination on: `.claude/agent-sync.json` guards the release surfaces and the three.js

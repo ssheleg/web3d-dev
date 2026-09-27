@@ -18,7 +18,7 @@ compatibility: >-
   visual result verified; without one the verdict is NOT_RUN.
 metadata:
   author: ssheleg
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # web3d-runtime — the scene runs, on every GPU it meets, and you can prove how fast
@@ -103,6 +103,9 @@ Choose the rung per scene, top down; every rung must still be a working page.
 
 ## When something is missing
 
+- **No tools at all in this host** → write the commands and the code, never their results. A
+  size, a pass, a frame time or "done" that nothing measured is fabricated evidence; mark each
+  such check `NOT_RUN` and say what a person must run.
 - **No browser or GPU in this host** → build, type-check and review; report visual and
   frame-time gates as `NOT_RUN` with the page and the device a person must use. Never report
   "smooth" from reading code.
