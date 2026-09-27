@@ -1,0 +1,96 @@
+{
+  "note": "Authored scenario definitions are not executed results. Executed probes and their limits are in test/evals/RESULTS.md.",
+  "scenarios": [
+    {
+      "id": "s01",
+      "title": "Instanced particles collapse after moving to TSL",
+      "skills": [
+        "web3d-runtime"
+      ],
+      "query": "We moved our InstancedMesh sphere particles to WebGPU and TSL. Now every sphere is a single dot. The material does material.positionNode = positions.element(instanceIndex). Fix it.",
+      "files": [],
+      "expected_behavior": [
+        "Explains that positionNode replaces the position after skinning, morphs and instancing, so the sphere's own vertices are discarded",
+        "Fixes with positionLocal.add(positions.toAttribute()) or the equivalent, keeping the sphere geometry",
+        "Mentions the sprite pattern (SpriteNodeMaterial with positionNode = buffer.toAttribute() and count) as the alternative for point-like particles",
+        "Does not suggest computeAsync as a way to wait for the GPU"
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "A character that slides and snaps to T-pose",
+      "skills": [
+        "web3d-animation"
+      ],
+      "query": "Our glTF character's feet slide when running, and after the death animation it pops back into a T-pose. We use three.js r186 AnimationMixer.",
+      "files": [],
+      "expected_behavior": [
+        "Sets clampWhenFinished = true and LoopOnce on the death action, explaining that a finished unclamped action disables itself",
+        "Derives run timeScale from actual movement speed over the clip's authored speed, and explains how to measure authored speed",
+        "Keeps locomotion clips in place and moves the character from code or physics; notes three.js has no built-in root motion",
+        "Listens for 'finished' on the mixer, not on the action"
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "Compress a heavy model for a drei scene",
+      "skills": [
+        "web3d-assets"
+      ],
+      "query": "This 80 MB GLB loads through drei useGLTF in our React Three Fiber app. Make it small with KTX2 and meshopt.",
+      "files": [],
+      "expected_behavior": [
+        "Uses gltf-transform (etc1s/uastc for KTX2, meshopt) or a native gltfpack build; notes the npm gltfpack cannot compress textures",
+        "Notes KTX2 in gltf-transform needs the ktx CLI from KTX-Software 4.4 or newer, not toktx",
+        "Produces EXT_meshopt_compression, because drei's useGLTF (three-stdlib) does not read KHR_meshopt_compression",
+        "Validates before and after, keeps the raw file, and measures the result against a target profile or asks for one"
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "An enemy character on a machine with Asset Foundry",
+      "skills": [
+        "web3d-assets",
+        "web3d-animation"
+      ],
+      "query": "We need a rigged enemy with idle, attack, hit and death clips for the web game. Asset Foundry is running on this machine.",
+      "files": [],
+      "expected_behavior": [
+        "Detects the foundry_* tools or the asset-foundry skill and delegates the order instead of calling Meshy or Tripo directly",
+        "Supplies a target profile (skinning allowed, max influences 4, budgets) and the canonical clip names",
+        "Notes that provider preset names differ (no literal 'attack' or 'death' preset) and maps them to the canon",
+        "Runs its own acceptance check on the delivered file and records the manifest and licence"
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "A crowd of five thousand",
+      "skills": [
+        "web3d-animation",
+        "web3d-runtime"
+      ],
+      "query": "Show 5,000 animated people walking around a plaza in the browser, each at a different phase.",
+      "files": [],
+      "expected_behavior": [
+        "Rules out BatchedMesh for skinned characters",
+        "Compares shared-pose skinned instancing, per-instance timing with compute skinning, and vertex-animation textures, with their costs",
+        "Recommends measuring the CPU cost of per-instance mixer.setTime and moving to VAT when it dominates",
+        "Adds reduced-motion and off-screen update policies"
+      ]
+    },
+    {
+      "id": "s06",
+      "title": "A landing-page hero is not this pack's job",
+      "skills": [
+        "web3d-runtime"
+      ],
+      "query": "Design the scroll-driven 3D particle hero for our marketing landing page.",
+      "files": [],
+      "expected_behavior": [
+        "Routes the design of the hero and its scroll motion to sheleg-design",
+        "Offers web3d-runtime only for implementation questions the design raises (renderer, TSL, performance)",
+        "Does not invent a motion design itself"
+      ]
+    }
+  ]
+}

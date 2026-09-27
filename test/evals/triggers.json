@@ -1,0 +1,188 @@
+{
+  "skill": "web3d-dev",
+  "note": "Trigger definitions only; probe provenance and limits are in test/evals/README.md.",
+  "split": {
+    "train": [
+      "q01",
+      "q03",
+      "q05",
+      "q07",
+      "q09",
+      "q11",
+      "q13",
+      "q15",
+      "q17",
+      "q19",
+      "q21"
+    ],
+    "validation": [
+      "q02",
+      "q04",
+      "q06",
+      "q08",
+      "q10",
+      "q12",
+      "q14",
+      "q16",
+      "q18",
+      "q20",
+      "q22"
+    ]
+  },
+  "queries": [
+    {
+      "id": "q01",
+      "lang": "en",
+      "query": "Set up a three.js scene on WebGPU with a WebGL2 fallback for Safari",
+      "should_trigger": true,
+      "why": "web3d-runtime: renderer init + fallback"
+    },
+    {
+      "id": "q02",
+      "lang": "ru",
+      "query": "Почему мои частицы на InstancedMesh схлопнулись в точку после перехода на TSL?",
+      "should_trigger": true,
+      "why": "web3d-runtime: positionNode gotcha (B1)"
+    },
+    {
+      "id": "q03",
+      "lang": "en",
+      "query": "Write a TSL compute shader that updates 100k particle positions every frame",
+      "should_trigger": true,
+      "why": "web3d-runtime: compute"
+    },
+    {
+      "id": "q04",
+      "lang": "ru",
+      "query": "Сцена на WebGPU иногда падает с потерей устройства, как это обработать?",
+      "should_trigger": true,
+      "why": "web3d-runtime: device loss"
+    },
+    {
+      "id": "q05",
+      "lang": "en",
+      "query": "Our React Three Fiber scene drops to 30 fps on laptops — how do we profile and fix it?",
+      "should_trigger": true,
+      "why": "web3d-runtime: profiling, R3F"
+    },
+    {
+      "id": "q06",
+      "lang": "en",
+      "query": "Compress this 80 MB GLB for the web with KTX2 textures and meshopt",
+      "should_trigger": true,
+      "why": "web3d-assets: pipeline"
+    },
+    {
+      "id": "q07",
+      "lang": "ru",
+      "query": "Какие бюджеты по треугольникам и текстурам ставить для персонажа в браузере?",
+      "should_trigger": true,
+      "why": "web3d-assets: budgets"
+    },
+    {
+      "id": "q08",
+      "lang": "en",
+      "query": "Where do we get a rigged 3D character — generate one or buy one, and what about licenses?",
+      "should_trigger": true,
+      "why": "web3d-assets: sourcing, rights"
+    },
+    {
+      "id": "q09",
+      "lang": "ru",
+      "query": "Нужно сделать 3D-модель врага, у нас есть Asset Foundry — как правильно заказать?",
+      "should_trigger": true,
+      "why": "web3d-assets: Foundry delegation path"
+    },
+    {
+      "id": "q10",
+      "lang": "en",
+      "query": "Blend between idle, walk and run for a glTF character with AnimationMixer",
+      "should_trigger": true,
+      "why": "web3d-animation: runtime blending"
+    },
+    {
+      "id": "q11",
+      "lang": "ru",
+      "query": "Как устроить протокол анимации персонажа: риг, клипы, имена, root motion?",
+      "should_trigger": true,
+      "why": "web3d-animation: asset half"
+    },
+    {
+      "id": "q12",
+      "lang": "en",
+      "query": "Animate 5,000 crowd characters in the browser without killing the frame rate",
+      "should_trigger": true,
+      "why": "web3d-animation: instanced/VAT/GPU"
+    },
+    {
+      "id": "q13",
+      "lang": "ru",
+      "query": "Персонаж скользит по земле во время бега — ноги не совпадают с перемещением",
+      "should_trigger": true,
+      "why": "web3d-animation: root motion / foot sliding"
+    },
+    {
+      "id": "q14",
+      "lang": "en",
+      "query": "Retarget Mixamo clips onto our own skeleton in three.js",
+      "should_trigger": true,
+      "why": "web3d-animation: retargeting"
+    },
+    {
+      "id": "q15",
+      "lang": "en",
+      "query": "Design the hero section of our landing page with a scroll-driven particle morph",
+      "should_trigger": false,
+      "why": "sheleg-design owns landing heroes and scroll motion"
+    },
+    {
+      "id": "q16",
+      "lang": "ru",
+      "query": "Сделай анимацию появления кнопки и плавный скролл на лендинге",
+      "should_trigger": false,
+      "why": "sheleg-design: UI motion, not 3D"
+    },
+    {
+      "id": "q17",
+      "lang": "en",
+      "query": "Our WebXR session on Quest 3 runs at 60 instead of 72 Hz in the headset browser",
+      "should_trigger": false,
+      "why": "xr-dev quest-webxr/quest-perf own the Quest session"
+    },
+    {
+      "id": "q18",
+      "lang": "ru",
+      "query": "Подготовь Quest-приложение к отправке в Store",
+      "should_trigger": false,
+      "why": "xr-dev quest-store"
+    },
+    {
+      "id": "q19",
+      "lang": "en",
+      "query": "Render a 30-second product video with animated captions",
+      "should_trigger": false,
+      "why": "hyperframes / remotion own rendered video"
+    },
+    {
+      "id": "q20",
+      "lang": "en",
+      "query": "Import this FBX into Unity and set up the Animator Controller",
+      "should_trigger": false,
+      "why": "engine-native Unity skills own Unity"
+    },
+    {
+      "id": "q21",
+      "lang": "ru",
+      "query": "Какой цвет кнопок выбрать для дашборда?",
+      "should_trigger": false,
+      "why": "design tokens: sheleg-design"
+    },
+    {
+      "id": "q22",
+      "lang": "en",
+      "query": "Check the status of Asset Foundry order job 42 and choose candidate B",
+      "should_trigger": false,
+      "why": "asset-foundry skill owns order operations"
+    }
+  ]
+}

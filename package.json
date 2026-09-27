@@ -1,0 +1,55 @@
+{
+  "name": "@ssheleg/web3d-dev",
+  "version": "0.1.0",
+  "description": "Three skills for realtime 3D on the web: the three.js WebGPU runtime with TSL, compute, post-processing and a WebGL2 fallback; the glTF asset pipeline from source to frame, with compression, budgets, sourcing and optional Asset Foundry ordering; and a 3D animation protocol covering rigs, clip conventions, blending, GPU and instanced animation, and reduced motion. Every API fact is pinned to a verified three.js release.",
+  "bin": {
+    "web3d-dev": "bin/web3d-dev.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "plugins",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssheleg/web3d-dev.git"
+  },
+  "homepage": "https://skills.sshlg.me/skills/web3d-dev/",
+  "license": "MIT",
+  "author": {
+    "name": "ssheleg",
+    "url": "https://x.com/sshlg93"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "keywords": [
+    "agent-skills",
+    "claude-code",
+    "cursor",
+    "three.js",
+    "webgpu",
+    "webgl",
+    "tsl",
+    "wgsl",
+    "gltf",
+    "ktx2",
+    "meshopt",
+    "draco",
+    "react-three-fiber",
+    "animation",
+    "skinning",
+    "3d",
+    "asset-pipeline"
+  ],
+  "scripts": {
+    "test": "python3 test/validate.py",
+    "test:negatives": "python3 test/validate.py --self-test"
+  }
+}
