@@ -18,7 +18,7 @@ compatibility: >-
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree
@@ -132,6 +132,9 @@ Code for each step: `references/runtime-patterns.md`.
 
 ## When something is missing
 
+- **No tools at all in this host** → write the commands and the code, never their results. A
+  size, a pass, a frame time or "done" that nothing measured is fabricated evidence; mark each
+  such check `NOT_RUN` and say what a person must run.
 - **No browser or headless GPU in this host** → implement and validate structure, then state
   the visual gates as `NOT_RUN` with what a person must look at. Never report motion verified
   from reading code.

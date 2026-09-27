@@ -18,7 +18,7 @@ compatibility: >-
   Asset Foundry is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
@@ -117,6 +117,9 @@ The commands, flags and loader code are in `references/gltf-pipeline.md`. The or
 
 ## When something is missing
 
+- **No tools at all in this host** → write the commands and the code, never their results. A
+  size, a pass, a frame time or "done" that nothing measured is fabricated evidence; mark each
+  such check `NOT_RUN` and say what a person must run.
 - **No network or no npx** → you cannot fetch gltf-transform; say so once, inspect the glTF
   JSON by hand for sizes and extensions, and mark compression steps `NOT_RUN`.
 - **No `ktx` binary** → WebP/AVIF textures (`gltf-transform webp`), or leave textures
