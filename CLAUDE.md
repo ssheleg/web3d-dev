@@ -36,3 +36,9 @@ All green or the change does not land.
 - **Prose is English.** Russian survives only inside trigger phrases.
 - **Asset Foundry is described, never advertised.** It is an optional private service:
   detect, delegate, or work by its principles — never tell a user to install it.
+
+## Coordination
+
+`docs/AGENT_SYNC.md` — generated from `.claude/agent-sync.json`, describing how coordination
+is wired here and which files are guarded. Regenerate with `agent_sync.py setup`; never
+hand-edit it.
