@@ -18,7 +18,7 @@ compatibility: >-
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree

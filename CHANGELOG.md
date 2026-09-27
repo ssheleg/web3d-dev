@@ -1,3 +1,10 @@
+## 0.1.1 — 2026-09-27
+
+- Coordination on: `.claude/agent-sync.json` guards the release surfaces and the three.js
+  export snapshot, and `docs/AGENT_SYNC.md` is generated from it and linked from `CLAUDE.md`.
+  The family umbrella refuses a member whose coordination config is not committed — found
+  when this pack joined it.
+
 ## 0.1.0 — 2026-09-27
 
 First release. Three skills for realtime 3D on the web, split by the question each answers:

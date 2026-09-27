@@ -18,7 +18,7 @@ compatibility: >-
   visual result verified; without one the verdict is NOT_RUN.
 metadata:
   author: ssheleg
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # web3d-runtime — the scene runs, on every GPU it meets, and you can prove how fast
@@ -122,4 +122,4 @@ Choose the rung per scene, top down; every rung must still be a working page.
 
 Asset files and budgets are `web3d-assets`; making things move is `web3d-animation`. The
 public `webgpu-threejs-tsl` skill (dgreenheck) informed the gotcha-first shape of this one;
-several of its examples are exactly the silent failures listed above.
+the errata found when re-verifying its examples against r186 are among the gotchas above.
