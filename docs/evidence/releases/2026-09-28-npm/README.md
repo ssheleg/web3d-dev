@@ -11,3 +11,12 @@
 
 A skipped or green-but-idle publish job proves nothing; the proof is an unpublished version
 appearing on the registry from the tag alone.
+
+## Observed after the tag
+
+`v0.1.2` → release run 36359053252: jobs `validate`, `House skill audit`, `release` and
+**`publish`** all `success` (the publish job ran, it did not skip). The registry then served
+`dist-tags.latest = 0.1.2` with a SLSA v1 provenance attestation
+(`npm view @ssheleg/web3d-dev@0.1.2 dist.attestations.provenance`). No token was used; the
+publish authenticated through GitHub OIDC.
+
