@@ -3,7 +3,7 @@
   "name": "web3d-dev",
   "displayName": "Web3D Dev",
   "description": "Three skills for realtime 3D on the web: the three.js WebGPU runtime with TSL, compute, post-processing and a WebGL2 fallback; the glTF asset pipeline from source to frame, with compression, budgets, sourcing and optional Asset Foundry ordering; and a 3D animation protocol covering rigs, clip conventions, blending, GPU and instanced animation, and reduced motion. Every API fact is pinned to a verified three.js release.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "ssheleg",
     "url": "https://x.com/sshlg93"
