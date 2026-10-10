@@ -18,7 +18,7 @@ compatibility: >-
   Asset Foundry is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
