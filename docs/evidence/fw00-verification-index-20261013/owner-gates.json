@@ -1,0 +1,183 @@
+{
+  "schema": 1,
+  "source": "c8047908c00cdcac4912d6e5b6a3d58ff33f8d4e",
+  "commands": [
+    {
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "started_utc": "2026-10-13T11:36:35.578938+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-0.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-ad67d93899e54d5e8791672e98fe9c6f",
+      "admitted_free_bytes": 618004480,
+      "owned_pid": 16493,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 618000384,
+      "elapsed_seconds": 1.007,
+      "log_sha256": "41ae566dbe22db4a431e601e9558832602597039439332546f18471c0e97f9aa",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [
+        "node-compile-cache"
+      ],
+      "scratch_removed": true,
+      "owned_cleanup": {
+        "proof": "Fresh empty UUID directory created and recorded before this exact child process; terminal PASS; only node-compile-cache descendants remained; all same uid, no symlinks.",
+        "files": 95,
+        "bytes": 308772
+      }
+    },
+    {
+      "argv": [
+        "npm",
+        "run",
+        "test:negatives"
+      ],
+      "started_utc": "2026-10-13T11:36:36.612030+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-1.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-c826135280604cc3b90f948efb9146c7",
+      "admitted_free_bytes": 618278912,
+      "owned_pid": 16613,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 615743488,
+      "elapsed_seconds": 6.039,
+      "log_sha256": "bd29e808ecf43f03d2f5edeadb7f4ac6da29cf6cfb028fc8809c090ee32320ea",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [
+        "node-compile-cache"
+      ],
+      "scratch_removed": true,
+      "owned_cleanup": {
+        "proof": "Fresh empty UUID directory created and recorded before this exact child process; terminal PASS; only node-compile-cache descendants remained; all same uid, no symlinks.",
+        "files": 93,
+        "bytes": 305548
+      }
+    },
+    {
+      "argv": [
+        "node",
+        "test/installer_test.js"
+      ],
+      "started_utc": "2026-10-13T11:36:42.679837+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-2.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-dc9bef48099540f599cf33e1fb20045a",
+      "admitted_free_bytes": 614596608,
+      "owned_pid": 17437,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 614584320,
+      "elapsed_seconds": 1.008,
+      "log_sha256": "23b540f309afe29a13484f11f1fe269ae71a744bfe62a0088d9559007cad480a",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "bash",
+        "-n",
+        "install.sh"
+      ],
+      "started_utc": "2026-10-13T11:36:43.719410+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-3.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-d4a9a1ed28134599b72e039c53cf9828",
+      "admitted_free_bytes": 612405248,
+      "owned_pid": 17793,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 612392960,
+      "elapsed_seconds": 1.01,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "claude",
+        "plugin",
+        "validate",
+        ".",
+        "--strict"
+      ],
+      "started_utc": "2026-10-13T11:36:44.753929+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-4.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-4ad3bc5b25b74c39825d052a6d33191e",
+      "admitted_free_bytes": 611303424,
+      "owned_pid": 18021,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 611287040,
+      "elapsed_seconds": 1.011,
+      "log_sha256": "5c8981af049df3cbbddae41fda7ff1f4acf13b4f02aec27c217ada1c5ddf4606",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "argv": [
+        "claude",
+        "plugin",
+        "validate",
+        "plugins/web3d-dev",
+        "--strict"
+      ],
+      "started_utc": "2026-10-13T11:36:45.793216+00:00",
+      "log": "/tmp/fw00-web3d-dev-gate-5.log",
+      "owned_scratch": "/tmp/fresh-fw00-web3d-dev-9b53aecece10493090a43b000be19188",
+      "admitted_free_bytes": 610877440,
+      "owned_pid": 18266,
+      "exit_code": 0,
+      "disk_stopped": false,
+      "timed_out": false,
+      "minimum_free_bytes": 610865152,
+      "elapsed_seconds": 1.007,
+      "log_sha256": "421da3ad30bfabd3a47e0efc7855bc42654fcdcfc7bf6c32029af811fb32536f",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    },
+    {
+      "source": "c8047908c00cdcac4912d6e5b6a3d58ff33f8d4e",
+      "owner": "web3d-dev-verification-index",
+      "argv": [
+        "python3",
+        "test/evals_validate.py"
+      ],
+      "log": "/tmp/fw00-web3d-dev-verification-index-final.log",
+      "owned_scratch": "/tmp/fresh-fw00-final-f520a62d85be436a8ac65d45b03fda51",
+      "started_utc": "2026-10-13T11:38:06.109207+00:00",
+      "admitted_free_bytes": 618512384,
+      "exit_code": 0,
+      "disk_or_time_stopped": false,
+      "minimum_free_bytes": 618491904,
+      "elapsed_seconds": 1.012,
+      "log_sha256": "ad806a1a4ec18580fc2664be3149b5787247eb92e26a0fff9b9d3def9450a249",
+      "source_unchanged": true,
+      "worktree_clean": true,
+      "scratch_entries": [],
+      "scratch_removed": true
+    }
+  ],
+  "all_exit_zero": true,
+  "source_unchanged": true,
+  "worktree_clean_at_checks": true,
+  "admission_bytes": 419430400,
+  "stop_bytes": 209715200,
+  "independent_peer": "https://github.com/ssheleg/sshlg-skills/blob/a155725e46a0f11ddc4073fb9e337916c0194181/docs/evidence/completion-1013/fw00-navigation-peer.json",
+  "logs": "owner-gate-logs.json.gz",
+  "limits": "Local owner gates and pointer navigation only. No native/model acceptance, version change, publication or installed update. Later receipt-only successor still needs final structural/link/package checks and genuine candidate CI."
+}
