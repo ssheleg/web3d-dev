@@ -29,8 +29,9 @@ Hub pins and global installation belong to the coordinating hub wave.
 
 ## Current state and next task
 
-Plan committed before the metadata change. PR admission, tag creation, publication and installation remain pending.
-Next: freeze this receipt, push, then promote the reviewed draft once. No model/provider/native-runtime acceptance is inferred.
+Published and byte-verified; see [the final receipt](#published-readback).
+Next: coordinator reconciles family pins and global installation separately.
+No model/provider/native-runtime acceptance is inferred.
 
 Skills used: make-skill (release construction), task-pipeline (delivery),
 agent-sync (local advisory ownership), evidence-docs (source and check receipts).
@@ -55,3 +56,30 @@ Installer: 11 cases pass. Eval corpus: 22 trigger cases and six scenarios valida
 (the corpus was checked, no model eval run is implied). Both strict Claude
 manifests and `git diff --check` pass. All commands exited 0.
 Local checks do not imply native/model or family-install acceptance.
+
+
+## Published readback
+
+The new annotated `v0.1.4` resolves to merged source
+`b364213ad3705449b3ffcb6c8f65c090310ceca2`. [Release run 38340380810](https://github.com/ssheleg/web3d-dev/actions/runs/38340380810)
+completed successfully on that exact tag/source, and the [GitHub release](https://github.com/ssheleg/web3d-dev/releases/tag/v0.1.4)
+and exact npm package `@ssheleg/web3d-dev@0.1.4` were observed.
+No historical tag was changed.
+
+The [owner machine receipt](published-readback.json) records registry integrity,
+tarball SHA-256 and every packaged file's hash/size. All 20 files matched
+tagged source byte-for-byte. Isolated `npm exec --yes --package=@ssheleg/web3d-dev@0.1.4 -- web3d-dev --help`
+exited 0 without installing skills. The later repository-only header successor
+`b993d2517545a0d3f4fb6358f4942c7025fc2fdf` also matched every published payload byte.
+
+This follow-up closes GATE-01 and GATE-02's source/publication scope from observed
+evidence. It changes documentation only, preserves package version and payload,
+and does not claim installation, native agent use or older releases were tested.
+Exact next task: coordinator consumes these final board states and publication
+receipts in its family-pin/install wave.
+
+Documentation reconciliation checks: `python3 test/validate.py` and
+`git diff --check` exited 0. `npm pack --dry-run --json` exited 0; all
+20 payload paths and SHA-256 hashes still matched the published receipt.
+No implementation or test code changed, so the prior implementation gates remain
+the source evidence; eligible PR validation will apply to this frozen successor.
