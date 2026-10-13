@@ -1,0 +1,156 @@
+{
+  "schema": "member-owner-published-readback/1",
+  "sourceReceipt": "https://github.com/ssheleg/sshlg-skills/blob/d798f3812d7b77288154502f757ab24248f3ee53/docs/evidence/completion-1013/member-release-readback.json",
+  "receipt": {
+    "repo": "web3d-dev",
+    "version": "0.1.4",
+    "tag": "v0.1.4",
+    "source": "b364213ad3705449b3ffcb6c8f65c090310ceca2",
+    "tagReadback": "c0b4470c64d9c3edb9d13808bad699e064533a17\trefs/tags/v0.1.4\nb364213ad3705449b3ffcb6c8f65c090310ceca2\trefs/tags/v0.1.4^{}",
+    "run": {
+      "conclusion": "success",
+      "databaseId": 38340380810,
+      "event": "push",
+      "headBranch": "v0.1.4",
+      "headSha": "b364213ad3705449b3ffcb6c8f65c090310ceca2",
+      "status": "completed",
+      "url": "https://github.com/ssheleg/web3d-dev/actions/runs/38340380810"
+    },
+    "githubRelease": {
+      "isDraft": false,
+      "isPrerelease": false,
+      "tagName": "v0.1.4",
+      "targetCommitish": "main",
+      "url": "https://github.com/ssheleg/web3d-dev/releases/tag/v0.1.4"
+    },
+    "registryVersion": "0.1.4",
+    "registryIntegrity": "sha512-DurtIGEGbWI3qLAmYUuDOjuNl4uY5Djq/R/Kd/mnuKXrvD6p4sn6wfxqj9f0DKXuyA4LFH1rZUT8TdJ45uDKxQ==",
+    "tarballSha256": "9307503073cbf6c23b90eb80adef9a5b7d645f15fe41eedbc4f4a2c3581ebe9d",
+    "allPackagedFilesByteEqual": true,
+    "fileCount": 20,
+    "files": [
+      {
+        "path": "CHANGELOG.md",
+        "sha256": "536f3b1c8d5379473274f09e9cfc40f7e5f3394307d4c74f275114e7ad442802",
+        "bytes": 3357
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "826df230e15df9b208c1e08c42ef3b764b21c4abec5a91a38976748e92a82e9d",
+        "bytes": 1064
+      },
+      {
+        "path": "README.md",
+        "sha256": "0265f7c43e256e03924b3199a26949cf92123b6e278622284bde3a8ff713891a",
+        "bytes": 4150
+      },
+      {
+        "path": "SECURITY.md",
+        "sha256": "d8a01b772b9477fcc2ade2818469f115519ad0a5740b48d9bff131c61bde8aee",
+        "bytes": 1739
+      },
+      {
+        "path": "bin/web3d-dev.js",
+        "sha256": "459195e13e549d3e23649720ac095c0e1bca687e1b45860043205c84fbd61ad7",
+        "bytes": 7018
+      },
+      {
+        "path": "package.json",
+        "sha256": "a1595ec69eb7d5cc14eb515889a59c87aeebc8537e901b244fb37865ce6224f7",
+        "bytes": 1412
+      },
+      {
+        "path": "plugins/web3d-dev/.claude-plugin/plugin.json",
+        "sha256": "6c29c03c79abacd02fd6f39d55891c22242a6f90b06d4700398569d349111e99",
+        "bytes": 1092
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-animation/SKILL.md",
+        "sha256": "c14a785731809444c07391b748eb7223e5658068a35100bf8e758443e8f62642",
+        "bytes": 10499
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-animation/references/asset-animation.md",
+        "sha256": "9684e920d209f88dfe8d945cbe2279b130319c180b7b36a2699216af6f737b74",
+        "bytes": 6831
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-animation/references/clip-canon.md",
+        "sha256": "bab87ce1e29a40d6f58d1bd24b08539ae3e2e22009cd68d72ffd3a54ba3055d2",
+        "bytes": 5325
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-animation/references/runtime-patterns.md",
+        "sha256": "66af0915ff1d64ef8933d7bd99da3776891bfd46916f36fe60d3432cdd44b78c",
+        "bytes": 9496
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-assets/SKILL.md",
+        "sha256": "c889b6bfaf035611e5d855f9389123083c5eb4ea9722169890f054a8f7d942ef",
+        "bytes": 8866
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-assets/references/budgets-and-profiles.md",
+        "sha256": "621800467b98097c82ca105b306258514f3ecae6e9ae3c23a47f109fc5314244",
+        "bytes": 4866
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-assets/references/clip-canon.md",
+        "sha256": "bab87ce1e29a40d6f58d1bd24b08539ae3e2e22009cd68d72ffd3a54ba3055d2",
+        "bytes": 5325
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-assets/references/gltf-pipeline.md",
+        "sha256": "73f2118ad65cbf9ca3d587f66fb89f8d7b191c5f35b78de37fcdbe35dca489db",
+        "bytes": 7130
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-assets/references/sourcing-and-foundry.md",
+        "sha256": "c620750c40496ec05b6bed73d606325a55fc094c2064556e2867a3d3dfd963db",
+        "bytes": 6736
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-runtime/SKILL.md",
+        "sha256": "fac9e98efba23e7d50d96e696d4d77d4ccc514e207d993e5f2f631012399aff7",
+        "bytes": 7865
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-runtime/references/performance-and-r3f.md",
+        "sha256": "09f0bca29af88d2cc957ec44261cd09b52b3f54bdd025951a71bb36031648815",
+        "bytes": 5813
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-runtime/references/renderer-and-loop.md",
+        "sha256": "408f6cf0cc540601cd750c1f951649157d2b040259308985deab2a9b2481e6a9",
+        "bytes": 6754
+      },
+      {
+        "path": "plugins/web3d-dev/skills/web3d-runtime/references/tsl-and-compute.md",
+        "sha256": "781cead976f282b9a4009087d3e974d2040c7f7bc1907802a93075abc619fa01",
+        "bytes": 7033
+      }
+    ],
+    "nonRepoNpmHelp": {
+      "exit": 0,
+      "isolatedHome": true,
+      "installedSkills": false
+    },
+    "acceptance": "published payload equals tagged source; help works; not native installed-hook or model-quality acceptance",
+    "repositoryOnlySuccessor": {
+      "source": "b993d2517545a0d3f4fb6358f4942c7025fc2fdf",
+      "candidate": "529495d0655ed34ca025641d6553efd75db6c21a",
+      "pr": "https://github.com/ssheleg/web3d-dev/pull/8",
+      "eligibleRun": {
+        "conclusion": "success",
+        "databaseId": 38344018019,
+        "event": "pull_request",
+        "headSha": "529495d0655ed34ca025641d6553efd75db6c21a",
+        "status": "completed",
+        "url": "https://github.com/ssheleg/web3d-dev/actions/runs/38344018019"
+      },
+      "reviewedTreeEqualsMerged": true,
+      "publishedPayloadByteEqual": true,
+      "reason": "test comments and own evidence only; published version/tag unchanged"
+    }
+  }
+}
