@@ -29,10 +29,29 @@ Hub pins and global installation belong to the coordinating hub wave.
 
 ## Current state and next task
 
-Plan committed before the metadata change. Local release-candidate checks, PR
-admission, tag creation, publication and installation are **NOT_RUN** here.
-Next: synchronize version metadata, then perform step 2 after the current FW04
-full gate finishes. No model/provider/native-runtime acceptance is inferred.
+Plan committed before the metadata change. PR admission, tag creation, publication and installation remain pending.
+Next: freeze this receipt, push, then promote the reviewed draft once. No model/provider/native-runtime acceptance is inferred.
 
 Skills used: make-skill (release construction), task-pipeline (delivery),
 agent-sync (local advisory ownership), evidence-docs (source and check receipts).
+
+## Candidate review and payload
+
+The coordinator independently reviewed `fb9e7ea75a6d7f7f50a5ad649fa7f003c0b0382a`: **PASS**. Version fields,
+new changelog and existing skill metadata agree; there is no executable or workflow
+diff.
+`npm pack --dry-run --json` exited 0: 20 files, 112371 unpacked bytes;
+no `.env`, agent-sync state or Python cache residue. Both common gate files retain
+the same SHA-256 digests as the independently reviewed FW02 source wave.
+
+Draft [PR 7](https://github.com/ssheleg/web3d-dev/pull/7) preserves the
+no-per-push CI policy until local checks finish.
+
+## Local candidate checks
+
+`npm test`: 15 structural checks, three skills and ten references pass.
+`npm run test:negatives`: 13 owner plants plus 42 member process controls pass.
+Installer: 11 cases pass. Eval corpus: 22 trigger cases and six scenarios validate
+(the corpus was checked, no model eval run is implied). Both strict Claude
+manifests and `git diff --check` pass. All commands exited 0.
+Local checks do not imply native/model or family-install acceptance.
