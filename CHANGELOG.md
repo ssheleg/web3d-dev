@@ -1,3 +1,20 @@
+## 0.2.0 (2026-10-20)
+
+- Every skill's front-matter `description` is now a router, not a manual: one
+  "Use when" sentence, a "NOT for" boundary naming the sibling skill, the opt-out
+  phrase (no web3d, без web3d) and a few English and Russian triggers. Lengths before
+  and after: web3d-animation 873 to 435, web3d-assets 856 to 450, web3d-runtime 841
+  to 455 (2,570 to 1,340 chars in total).
+- Why: Claude Code shares about 30,000 chars of skill listing across every installed
+  skill. Measured on 2026-10-20, the operator's listing held 29,995 chars for 134 skills
+  and 81 of them showed no description. Plugin skills cannot be hidden, so description
+  length is the only lever.
+- Every trigger phrase removed from a description moved verbatim (EN/RU pairs kept
+  together) into a new `## Triggers` section at the end of that skill's body, so the
+  family's routing hook still finds each of its words in the skill's text.
+- `test/validate.py`: the house description cap drops from 970 to the family cap of
+  500 chars; the standard's 1024 stays the hard limit. `CLAUDE.md` states the new rule.
+
 ## 0.1.4 — 2026-10-13
 
 - Validate the owner board's table shape, unique task IDs and immediate Markdown

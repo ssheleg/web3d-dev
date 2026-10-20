@@ -1,16 +1,12 @@
 ---
 name: web3d-assets
 description: >-
-  Use when a 3D asset must get from a source to a realtime web scene within budget — sourcing,
-  generating or buying models, textures and characters; the glTF pipeline (validate, clean,
-  simplify, KTX2 textures, meshopt or Draco); target budgets; loaders and colour spaces;
-  licences and provenance; and ordering through Asset Foundry when its tools are present, or
-  working by its principles when they are not. Triggers - "compress this GLB" / "сожми модель",
-  "KTX2", "meshopt", "Draco", "the model is too heavy" / "модель слишком тяжёлая", "budget for
-  a character" / "бюджет на персонажа", "where do we get a 3D model" / "где взять 3D-модель",
-  "Asset Foundry", "gltf-transform", "gltfpack". NOT for scene code or shaders (web3d-runtime),
-  making things move (web3d-animation), operating a Foundry order in flight (asset-foundry), or
-  Quest store assets (xr-dev).
+  Use when a 3D asset must reach a web scene within budget: sourcing models and textures,
+  the glTF pipeline (KTX2, meshopt, Draco), loaders, colour spaces, licences. NOT for scene
+  code (web3d-runtime), motion (web3d-animation), a Foundry order in flight (asset-foundry)
+  or Quest store assets (xr-dev). Opt out: no web3d, без web3d. Triggers - "compress this
+  GLB" / "сожми модель", "KTX2", "meshopt", "the model is too heavy" / "модель слишком
+  тяжёлая".
 license: MIT
 compatibility: >-
   Any agent host. Facts pinned to three@0.186.1, @gltf-transform/cli 4.5.0 and gltfpack 1.3.0.
@@ -18,7 +14,7 @@ compatibility: >-
   Asset Foundry is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.1.4"
+  version: "0.2.0"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
@@ -135,3 +131,9 @@ The commands, flags and loader code are in `references/gltf-pipeline.md`. The or
 | `references/budgets-and-profiles.md` | writing or checking a target profile, choosing budgets, LOD and instancing |
 | `references/sourcing-and-foundry.md` | choosing where an asset comes from: libraries, generators, licences, provenance; how Asset Foundry is detected and what it enforces |
 | `references/clip-canon.md` | an asset carries animation: names, loop and root-motion rules, export floor — shared with `web3d-animation` |
+
+## Triggers
+
+More phrases that route here: "gltf-transform", "Draco", "budget for a character" / "бюджет
+на персонажа", "where do we get a 3D model" / "где взять 3D-модель", "Asset Foundry",
+"gltfpack".

@@ -1,4 +1,19 @@
-# web3d-dev: evidence navigation handoff
+# web3d-dev: handoff
+
+## 2026-10-20: v0.2.0, short router descriptions
+
+Objective: free Claude Code's shared skill-listing budget (about 30,000 chars; 81 of
+134 skills showed no description on 2026-10-20). The three descriptions are now
+435-455 chars (2,570 to 1,340 in total); removed trigger phrases moved verbatim into
+each body's `## Triggers`. `test/validate.py` caps a description at 500 chars. Checks:
+`npm test`, `npm run test:negatives`, `node test/installer_test.js`,
+`python3 test/evals_validate.py` and both `claude plugin validate --strict` runs exit 0.
+Open: the umbrella's advertised-trigger check still reads descriptions only and
+reports 10 body-only triggers until its context-diet change lands; the umbrella
+re-pin is the umbrella's task, not this release's. Exact next task: none in this
+repository for this change.
+
+## Earlier: evidence navigation
 
 The [verification index](evidence/verification.md) routes to existing evidence for
 published version 0.1.4. The [FW00 packet](evidence/fw00-verification-index-20261013/README.md)
