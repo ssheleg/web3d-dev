@@ -32,7 +32,11 @@ All green or the change does not land.
 - **One contract, two homes.** `references/clip-canon.md` ships identically in
   `web3d-assets` and `web3d-animation`; edit both in one change.
 - **A body names every reference it ships, and ships every reference it names.**
-- **Descriptions keep the 60-character reserve** below the 970 house cap.
+- **Descriptions stay under the 500-character family cap** (target 400). Claude Code
+  shares one skill-listing budget across every installed skill, and on 2026-10-20 a full
+  budget left 81 skills with no description. A description is a router: "Use when",
+  "NOT for" with the sibling skill, the opt-out phrase and a few EN/RU triggers. Further
+  trigger phrases live in the body's `## Triggers`.
 - **Prose is English.** Russian survives only inside trigger phrases.
 - **Asset Foundry is described, never advertised.** It is an optional private service:
   detect, delegate, or work by its principles — never tell a user to install it.

@@ -1,16 +1,11 @@
 ---
 name: web3d-animation
 description: >-
-  Use when something must move in a realtime 3D web scene with three.js or React Three Fiber —
-  character rigs and clips, blending and state transitions, retargeting, root motion and foot
-  sliding, morph targets, crowds and instanced animation, vertex-animation textures,
-  procedural or GPU-driven motion. Carries a two-sided animation protocol: the asset half (rig,
-  clip canon, export, budgets) and the runtime half (clock, mixer, blending, GPU paths, pause,
-  reduced motion). Triggers - "animate the character" / "анимируй персонажа", "blend idle walk
-  run" / "переход между анимациями", "retarget Mixamo" / "ретаргетинг", "foot sliding" / "ноги
-  скользят", "crowd of characters" / "толпа персонажей", "AnimationMixer", "morph targets" /
-  "морф-таргеты". NOT for scroll or UI motion on a page (sheleg-design), rendered video
-  (hyperframes, remotion), or Unity and Unreal animators.
+  Use when something must move in a three.js or React Three Fiber scene: rigs and clips,
+  blending, retargeting, root motion, morph targets, crowds, GPU-driven motion. NOT for
+  scroll or UI motion (sheleg-design), rendered video (hyperframes) or Unity and Unreal. Opt
+  out: no web3d, без web3d. Triggers - "animate the character" / "анимируй персонажа",
+  "retarget Mixamo" / "ретаргетинг", "foot sliding" / "ноги скользят", "AnimationMixer".
 license: MIT
 compatibility: >-
   Any agent host. Facts are pinned to three@0.186.1 (r186). Uses @gltf-transform/cli through
@@ -18,7 +13,7 @@ compatibility: >-
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.1.4"
+  version: "0.2.0"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree
@@ -155,3 +150,8 @@ Code for each step: `references/runtime-patterns.md`.
 
 The runtime (renderer, TSL, compute, performance) is `web3d-runtime`; the file pipeline and
 budgets are `web3d-assets`. This skill owns motion only.
+
+## Triggers
+
+More phrases that route here: "blend idle walk run" / "переход между анимациями", "crowd of
+characters" / "толпа персонажей", "morph targets" / "морф-таргеты".
