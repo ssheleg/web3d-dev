@@ -8,7 +8,7 @@ repository's gate checks each code block against that release's exports.
 | Skill | The question it answers |
 |---|---|
 | [web3d-runtime](plugins/web3d-dev/skills/web3d-runtime/SKILL.md) | How does the scene run — WebGPU and its WebGL2 fallback, TSL and compute, post-processing, device loss, the frame loop, profiling, R3F on WebGPU — and what does it fall back to? |
-| [web3d-assets](plugins/web3d-dev/skills/web3d-assets/SKILL.md) | How does a model, texture or character get from a source to the frame within a budget — the glTF pipeline, target profiles, loaders, sourcing and licences, Asset Foundry when present? |
+| [web3d-assets](plugins/web3d-dev/skills/web3d-assets/SKILL.md) | How does a model, texture or character get from a source to the frame within a budget — the glTF pipeline, target profiles, loaders, sourcing and licences, the asset service when present? |
 | [web3d-animation](plugins/web3d-dev/skills/web3d-animation/SKILL.md) | How does it move — the technique, the asset half (rig, clip canon, export, QA) and the runtime half (clock, mixer, blending, crowds, reduced motion)? |
 
 Each skill leads with the failures that are silent in r186 — `render()` before `init()`,
@@ -23,8 +23,8 @@ Invoke the skill for the question you have: `/web3d-runtime`, `/web3d-assets` or
 inspects the project first (versions, renderer, loader, assets) and reports a table plus one
 next action.
 
-**Asset Foundry.** `web3d-assets` and `web3d-animation` detect the `foundry_*` tools or the
-`asset-foundry` skill of a machine that runs that service and delegate asset orders to it;
+**The asset service.** `web3d-assets` and `web3d-animation` detect the `foundry_*` tools or the
+skill of a machine that runs that service and delegate asset orders to it;
 without it they work by the same principles by hand — target profile, gate twice, one
 manifest per file, licences in four areas, capped spend.
 

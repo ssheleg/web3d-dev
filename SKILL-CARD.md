@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | Pack | `web3d-dev` |
-| Version | `0.2.0` |
+| Version | `0.2.1` |
 | Skills | `web3d-runtime`, `web3d-assets`, `web3d-animation` |
 | License | MIT |
 | Source | https://github.com/ssheleg/web3d-dev |
@@ -21,7 +21,7 @@ the engines' own skills.
 ## Inputs and outputs
 
 Inputs: a web project (or an empty one), its `package.json`, its `.glb`/`.gltf` files,
-optionally an Asset Foundry service on the machine. Outputs: code changes, processed asset
+optionally an asset-ordering service on the machine. Outputs: code changes, processed asset
 files with a manifest each, target profiles, and verification tables with PASS / FAIL /
 NOT_RUN per check. Nothing is bought, ordered or published without an explicit instruction.
 
@@ -30,7 +30,7 @@ NOT_RUN per check. Nothing is bought, ordered or published without an explicit i
 No hooks, no MCP server, no background process, no network fetch at load time. The bodies
 name `npx @gltf-transform/cli`, `gltfpack`, `ktx` and `npm` commands an agent may run; a paid
 asset order is an outward action that needs a person's budget and say-so, and goes through
-Asset Foundry when it is present rather than to a provider directly.
+the asset service when it is present rather than to a provider directly.
 
 ## Risk table
 
@@ -39,7 +39,7 @@ Asset Foundry when it is present rather than to a provider directly.
 | Executes code on install | Low | `bin/web3d-dev.js` copies directories; refuses when the plugin is present |
 | Reads credentials | None | nothing here reads or stores a secret |
 | Network at runtime | Low | `npx` fetches gltf-transform when an agent runs it; nothing fetches on load |
-| Spends money | Gated | generation providers and Asset Foundry orders are paid; the skills require a cap and an idempotency key, and stop for the operator above budget |
+| Spends money | Gated | generation providers and asset-service orders are paid; the skills require a cap and an idempotency key, and stop for the operator above budget |
 | Stale content | Medium | three.js moves every month; every fact is pinned to r186 and the gate checks code blocks against that release's exports |
 
 ## Maintenance

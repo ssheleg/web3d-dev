@@ -1,8 +1,8 @@
-# Sourcing and Asset Foundry — where an asset comes from, and who is allowed to make it
+# Sourcing and the asset service — where an asset comes from, and who is allowed to make it
 
 **Read this when** choosing where a model, texture or character comes from — a library,
 a marketplace, a generator, a local model — when a licence decides whether an asset ships,
-when writing a prompt for a 3D generator, or when deciding whether Asset Foundry should do
+when writing a prompt for a 3D generator, or when deciding whether the asset service should do
 the work.
 
 Verified against three@0.186.1 and the providers' public pages on 2026-09-27 (provider rows
@@ -17,7 +17,7 @@ provider's page before quoting one.
 - Local and open models
 - Writing a prompt for a 3D generator
 - Licences that stop a ship
-- Asset Foundry: detect, delegate, or work by its rules
+- The asset service: detect, delegate, or work by its rules
 - Sources
 
 ## The search order
@@ -89,17 +89,17 @@ A web build **is** redistribution: every visitor downloads the GLB. Marketplace 
 allow use "in a game" but forbid redistributing the source file need a reading, not a guess.
 An unknown answer is a no.
 
-## Asset Foundry: detect, delegate, or work by its rules
+## The asset service: detect, delegate, or work by its rules
 
-Asset Foundry is an optional service some machines run to make assets on request — 3D bodies,
+The asset service is an optional service some machines run to make assets on request — 3D bodies,
 textures, rigs and clips, concept images, sound — through a set of `foundry_*` MCP tools and
-its own `asset-foundry` skill. It is not a public package; do not tell a user to install it.
+its own skill. It is not a public package; do not tell a user to install it.
 
 **Detect.** The session's tool list contains `foundry_capabilities` (possibly under a host
-prefix), or an `asset-foundry` skill is installed. Neither → it is absent; use the rest of
+prefix), or the asset service's skill is installed. Neither → it is absent; use the rest of
 this skill.
 
-**Delegate.** Load the `asset-foundry` skill and follow it. The call order it enforces:
+**Delegate.** Load the asset service's skill and follow it. The call order it enforces:
 search the catalogue → plan → estimate → order with an idempotency key → poll → answer the
 choice stage → delivery with one manifest per file. Pass this project's target profile. Read
 its health output before assuming a provider is available — a listed tool is not a working
@@ -123,5 +123,5 @@ no catalogue and no gate, and it is how the same asset gets paid for twice.
   <https://huggingface.co/briaai/RMBG-2.0> (CC BY-NC 4.0); Hunyuan3D licence
   <https://github.com/Tencent-Hunyuan/Hunyuan3D-2/blob/main/LICENSE>; GET3D
   <https://github.com/nv-tlabs/GET3D> (NVIDIA non-commercial licence).
-- Measurements (TRELLIS timing, Tripo face-count behaviour, prompt rules): Asset Foundry's
+- Measurements (TRELLIS timing, Tripo face-count behaviour, prompt rules): the asset service's
   provider research and runs on this estate, 2026-09-19 to 2026-09-24.

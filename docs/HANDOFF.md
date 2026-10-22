@@ -1,5 +1,11 @@
 # web3d-dev: handoff
 
+## v0.2.1: the asset service is not named (2026-10-22)
+
+- **Objective.** Remove a private service's product name from shipped skills and public pages (operator, 2026-10-22).
+- **Done.** Generic "asset service" wording across skills, references, evals and public pages; detection by `foundry_*` tools kept; version 0.2.1.
+- **Next task.** After merge: tag `v0.2.1`, watch the release run, then the sshlg-skills pin bump (its `skills.json` desc mirrors this description).
+
 ## 2026-10-20: v0.2.0, short router descriptions
 
 Objective: free Claude Code's shared skill-listing budget (about 30,000 chars; 81 of

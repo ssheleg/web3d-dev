@@ -13,7 +13,7 @@ compatibility: >-
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree
@@ -34,8 +34,8 @@ share (`references/clip-canon.md`).
 3. **What exists.** For every `.glb`/`.gltf`: `npx @gltf-transform/cli inspect <file>` —
    animations (names, duration, channels), skins (joint count), morph targets, and whether the
    file is compressed. Compare clip names against the canon.
-4. **Where assets will come from.** An Asset Foundry tool (`foundry_capabilities`) or the
-   `asset-foundry` skill in this session → ordering goes through it; otherwise
+4. **Where assets will come from.** An asset-service tool (`foundry_capabilities`) or the
+   asset service's skill in this session → ordering goes through it; otherwise
    `web3d-assets` decides the source.
 
 Report one table — *object · technique now · technique needed · gap* — and exactly ONE next
@@ -66,7 +66,7 @@ Work this list per character; each line is a check, not advice.
    in Step 1 instead of ordering a rig that cannot be made.
 2. **Canon.** Every clip gets a canonical name, loop mode and displacement rule from
    `references/clip-canon.md`. Provider names are mapped once, at import.
-3. **Source.** Order through Asset Foundry when present (check rig feasibility first — a rig
+3. **Source.** Order through the asset service when present (check rig feasibility first — a rig
    check is cheaper than a rig of a sphere); otherwise the provider table and licence rules in
    `references/asset-animation.md`. Motion data licences differ from mesh licences — record
    both.
@@ -136,7 +136,7 @@ Code for each step: `references/runtime-patterns.md`.
 - **`@gltf-transform/cli` unavailable (no network, no npx)** → read the glTF JSON (`.gltf`
   directly; `.glb` chunk 0) for `animations`, `skins` and `targets`; say which checks that
   cannot do (validation, compression-aware inspection).
-- **Asset Foundry absent** → source by hand through `web3d-assets`; its principles still apply.
+- **The asset service absent** → source by hand through `web3d-assets`; its principles still apply.
 - **The operator's decision is needed** (a paid order over budget, a licence of unknown scope) →
   stop at that line and name it; do not route around it.
 

@@ -30,7 +30,7 @@ provider's page before quoting one to a person.
 5. **Export, then run the QA gate below.** Nothing is "done" at delivery; it is done when it
    plays correctly in the target runtime.
 
-With Asset Foundry present, steps 2–4 are one order on its animated-character recipe, and
+With the asset service present, steps 2–4 are one order on its animated-character recipe, and
 riggability is checked by the service before it spends; follow its skill rather than calling
 a provider. The rest of this file is how the same work is done, or judged, without it.
 
