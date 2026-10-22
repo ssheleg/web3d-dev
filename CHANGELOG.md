@@ -1,3 +1,10 @@
+## Unreleased
+
+- `test/family_gate.py`, the family's canonical member gate (hub B-108, B-109): the board
+  parses (every row as wide as its header, no id twice) and `release.yml` keeps the tag-ancestry
+  check (`fetch-depth: 0`, `git merge-base --is-ancestor`), each watched failing on a plant by
+  `--self-test`. Wired into `npm test`; a byte-for-byte copy of the hub's `member-gate/family_gate.py`.
+
 ## v0.2.2: a shorter router description and a current ledger
 
 - `web3d-assets`'s description says "an order in flight (its service's skill)": 0.2.1's generic wording had grown it by 14 characters, over the family's description budget. The verification ledger records this version.
