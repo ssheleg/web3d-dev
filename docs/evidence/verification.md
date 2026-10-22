@@ -1,5 +1,11 @@
 # Verification evidence — web3d-dev
 
+## Release candidate: v0.2.2 (2026-10-22)
+
+a shorter router description and a current ledger
+
+Evidence: `npm test` exit 0 on the candidate tree before the PR; the PR CI run and the tag release run are named in docs/HANDOFF.md.
+
 ## v0.2.0: short router descriptions (2026-10-20)
 
 | Evidence needed | Owning source | Scope and limits |

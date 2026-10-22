@@ -1,5 +1,11 @@
 # web3d-dev: handoff
 
+## v0.2.2: a shorter router description and a current ledger (2026-10-22)
+
+- **Objective.** Bring the description back under the family budget and record the shipped version in the ledger.
+- **Done.** Description trimmed; ledger entry v0.2.2.
+- **Next task.** After merge: tag `v0.2.2`, watch the release run, then the sshlg-skills pin bump.
+
 ## v0.2.1: the asset service is not named (2026-10-22)
 
 - **Objective.** Remove a private service's product name from shipped skills and public pages (operator, 2026-10-22).
