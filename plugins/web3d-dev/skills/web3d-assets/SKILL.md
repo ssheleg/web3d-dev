@@ -3,7 +3,7 @@ name: web3d-assets
 description: >-
   Use when a 3D asset must reach a web scene within budget: sourcing models and textures,
   the glTF pipeline (KTX2, meshopt, Draco), loaders, colour spaces, licences. NOT for scene
-  code (web3d-runtime), motion (web3d-animation), an asset-service order in flight (that service's skill)
+  code (web3d-runtime), motion (web3d-animation), an order in flight (its service's skill)
   or Quest store assets (xr-dev). Opt out: no web3d, без web3d. Triggers - "compress this
   GLB" / "сожми модель", "KTX2", "meshopt", "the model is too heavy" / "модель слишком
   тяжёлая".
@@ -14,7 +14,7 @@ compatibility: >-
   The asset service is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
