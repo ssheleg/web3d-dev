@@ -1,5 +1,10 @@
 # web3d-dev: handoff
 
+## 0.2.2 released and pinned (2026-10-22)
+
+- **State.** web3d-dev 0.2.2 is tagged, on npm and pinned by sshlg-skills 1.73.2; installed on the operator machine (every addressable scope).
+- **Next task.** Board empty. Next work comes from the operator's planning; none is assigned here by the hub's M2 plan (`ssheleg/sshlg-skills` `docs/runs/2026-10-22-m2-subscription-growth-plan.md`).
+
 ## v0.2.2: a shorter router description and a current ledger (2026-10-22)
 
 - **Objective.** Bring the description back under the family budget and record the shipped version in the ledger.
