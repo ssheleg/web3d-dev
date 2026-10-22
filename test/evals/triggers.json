@@ -89,9 +89,9 @@
     {
       "id": "q09",
       "lang": "ru",
-      "query": "Нужно сделать 3D-модель врага, у нас есть Asset Foundry — как правильно заказать?",
+      "query": "Нужно сделать 3D-модель врага, у нас на машине есть сервис заказа ассетов — как правильно заказать?",
       "should_trigger": true,
-      "why": "web3d-assets: Foundry delegation path"
+      "why": "web3d-assets: asset-service delegation path"
     },
     {
       "id": "q10",
@@ -180,9 +180,9 @@
     {
       "id": "q22",
       "lang": "en",
-      "query": "Check the status of Asset Foundry order job 42 and choose candidate B",
+      "query": "Check the status of asset-service order job 42 and choose candidate B",
       "should_trigger": false,
-      "why": "asset-foundry skill owns order operations"
+      "why": "the asset service's skill owns order operations"
     }
   ]
 }

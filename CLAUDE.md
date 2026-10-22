@@ -38,8 +38,10 @@ All green or the change does not land.
   "NOT for" with the sibling skill, the opt-out phrase and a few EN/RU triggers. Further
   trigger phrases live in the body's `## Triggers`.
 - **Prose is English.** Russian survives only inside trigger phrases.
-- **Asset Foundry is described, never advertised.** It is an optional private service:
-  detect, delegate, or work by its principles — never tell a user to install it.
+- **The asset service is never named.** It is an optional private service of the operator's
+  machine: detect it by its `foundry_*` tools, delegate, or work by its principles; never name
+  the product or tell a user to install it (operator, 2026-10-22: no private project names in
+  public skills).
 
 ## Coordination
 

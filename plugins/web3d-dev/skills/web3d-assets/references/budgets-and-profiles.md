@@ -4,7 +4,7 @@
 budget for a model, texture or scene, or when deciding between LOD, instancing and batching.
 
 Verified against three@0.186.1 and @gltf-transform/cli 4.5.0 on 2026-09-27. The profile
-fields mirror what Asset Foundry's target profiles gate on, so one profile serves both paths.
+fields mirror what the asset service's target profiles gate on, so one profile serves both paths.
 
 ## Contents
 
@@ -103,6 +103,6 @@ Remember the scene budget counts every instance: sixteen instances of a 5k-trian
 - three@0.186.1: `src/objects/InstancedMesh.js:113,149-164`, `src/objects/BatchedMesh.js`
   (no skin code; `perObjectFrustumCulled`, `sortObjects`), `src/objects/LOD.js:64-83`.
 - @gltf-transform/cli 4.5.0 `src/cli.ts` (`optimize --texture-size` default 2048; `inspect`).
-- Asset Foundry target-profile fields (budgets per asset and scene, allowed loader extensions,
+- The asset service's target-profile fields (budgets per asset and scene, allowed loader extensions,
   skinning, joints and influences, VAT support) — the private service's profile schema,
   mirrored here by field name only.

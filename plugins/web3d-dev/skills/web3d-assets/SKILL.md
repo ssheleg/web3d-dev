@@ -3,7 +3,7 @@ name: web3d-assets
 description: >-
   Use when a 3D asset must reach a web scene within budget: sourcing models and textures,
   the glTF pipeline (KTX2, meshopt, Draco), loaders, colour spaces, licences. NOT for scene
-  code (web3d-runtime), motion (web3d-animation), a Foundry order in flight (asset-foundry)
+  code (web3d-runtime), motion (web3d-animation), an asset-service order in flight (that service's skill)
   or Quest store assets (xr-dev). Opt out: no web3d, без web3d. Triggers - "compress this
   GLB" / "сожми модель", "KTX2", "meshopt", "the model is too heavy" / "модель слишком
   тяжёлая".
@@ -11,10 +11,10 @@ license: MIT
 compatibility: >-
   Any agent host. Facts pinned to three@0.186.1, @gltf-transform/cli 4.5.0 and gltfpack 1.3.0.
   Uses npx for gltf-transform; KTX2 output needs the `ktx` CLI from KTX-Software 4.4 or newer.
-  Asset Foundry is optional: detected through its foundry_* MCP tools or its skill, never assumed.
+  The asset service is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
@@ -25,8 +25,8 @@ budget the project declared**, with its origin and licence recorded — whoever 
 
 ## First action — inspect, then report
 
-1. **Is Asset Foundry here?** Look in this session's tool list for `foundry_capabilities` (a
-   host may prefix it) and for an `asset-foundry` skill. Either present → new assets are
+1. **Is the asset service here?** Look in this session's tool list for `foundry_capabilities` (a
+   host may prefix it) and for the asset service's skill. Either present → new assets are
    **ordered through it**, and this skill supplies the target profile and the acceptance check.
    Absent → you source and process by hand, by the same principles (below).
 2. **The loader.** Which loader reads the files: three's `GLTFLoader` (r186) or drei's
@@ -41,7 +41,7 @@ Report a table — *asset · now · budget · over by · fix* — and exactly ON
 
 ## The principles — the same with or without the service
 
-These are what Asset Foundry enforces mechanically. By hand, you enforce them yourself.
+These are what the asset service enforces mechanically. By hand, you enforce them yourself.
 
 1. **Look before you make.** Search the project's own assets, then free CC0 libraries, then
    buy or generate. A hit costs nothing and carries its provenance.
@@ -59,11 +59,11 @@ These are what Asset Foundry enforces mechanically. By hand, you enforce them yo
 7. **Spend has caps and keys.** A per-order and per-day cap; an idempotency key per asset
    (`<project>/<asset>/<version>`) so a retry never pays twice; a price quoted with its date.
 
-## With Asset Foundry present
+## With the asset service present
 
 Delegate; do not call a provider yourself — that path has no ledger, catalog or gate.
 
-1. Load the `asset-foundry` skill and follow it: search → plan/estimate → order → poll →
+1. Load the asset service's skill and follow it: search → plan/estimate → order → poll →
    choose → delivery with manifest.
 2. Give it the project's **target profile**. If the service has no profile matching this
    project's loader, ask the operator to register one; do not order against another project's.
@@ -120,7 +120,7 @@ The commands, flags and loader code are in `references/gltf-pipeline.md`. The or
   JSON by hand for sizes and extensions, and mark compression steps `NOT_RUN`.
 - **No `ktx` binary** → WebP/AVIF textures (`gltf-transform webp`), or leave textures
   uncompressed and record the gap; do not install system tools without the operator.
-- **Asset Foundry absent** → the pipeline above; the principles still hold.
+- **The asset service absent** → the pipeline above; the principles still hold.
 - **Licence unknown** → the asset does not ship; name the missing answer.
 
 ## References
@@ -129,11 +129,11 @@ The commands, flags and loader code are in `references/gltf-pipeline.md`. The or
 |---|---|
 | `references/gltf-pipeline.md` | running any processing step or wiring a loader: commands, flags, loader setup for r186 and R3F |
 | `references/budgets-and-profiles.md` | writing or checking a target profile, choosing budgets, LOD and instancing |
-| `references/sourcing-and-foundry.md` | choosing where an asset comes from: libraries, generators, licences, provenance; how Asset Foundry is detected and what it enforces |
+| `references/sourcing-and-foundry.md` | choosing where an asset comes from: libraries, generators, licences, provenance; how the asset service is detected and what it enforces |
 | `references/clip-canon.md` | an asset carries animation: names, loop and root-motion rules, export floor — shared with `web3d-animation` |
 
 ## Triggers
 
 More phrases that route here: "gltf-transform", "Draco", "budget for a character" / "бюджет
-на персонажа", "where do we get a 3D model" / "где взять 3D-модель", "Asset Foundry",
+на персонажа", "where do we get a 3D model" / "где взять 3D-модель",
 "gltfpack".

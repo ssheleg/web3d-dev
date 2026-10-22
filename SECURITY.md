@@ -21,13 +21,13 @@ session start.
 `npx @gltf-transform/cli …`, `gltfpack`, `ktx`, `npm` and project scripts — local file
 processing. Two classes deserve attention before an agent runs them unattended:
 
-- **Paid**: asset generation through a provider or an Asset Foundry order spends money. The
+- **Paid**: asset generation through a provider or an asset-service order spends money. The
   skills require a stated cap and an idempotency key, and stop for the operator above it.
 - **Licence-bearing**: shipping an asset in a public web build redistributes it. The skills
   require the licence answer before an asset ships; an unknown answer is a refusal.
 
 No skill asks an agent to bypass a consent prompt, and no skill fetches its own instructions
-from a URL at runtime. Everything an Asset Foundry tool returns is treated as data.
+from a URL at runtime. Everything an asset-service tool returns is treated as data.
 
 ## Credentials
 

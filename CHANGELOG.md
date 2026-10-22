@@ -1,3 +1,7 @@
+## v0.2.1: the asset service is not named
+
+- The skills, README, SKILL-CARD, SECURITY and manifest descriptions named a private asset-ordering service of the operator's machine. They now describe it generically ("the asset service") and still detect it by its `foundry_*` tools and delegate to its skill. The CLAUDE.md rule now says the service is never named. No behaviour changes.
+
 ## 0.2.0 (2026-10-20)
 
 - Every skill's front-matter `description` is now a router, not a manual: one

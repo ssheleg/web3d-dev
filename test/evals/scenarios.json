@@ -48,15 +48,15 @@
     },
     {
       "id": "s04",
-      "title": "An enemy character on a machine with Asset Foundry",
+      "title": "An enemy character on a machine with an asset-ordering service",
       "skills": [
         "web3d-assets",
         "web3d-animation"
       ],
-      "query": "We need a rigged enemy with idle, attack, hit and death clips for the web game. Asset Foundry is running on this machine.",
+      "query": "We need a rigged enemy with idle, attack, hit and death clips for the web game. An asset-ordering service is running on this machine.",
       "files": [],
       "expected_behavior": [
-        "Detects the foundry_* tools or the asset-foundry skill and delegates the order instead of calling Meshy or Tripo directly",
+        "Detects the foundry_* tools or the asset service's skill and delegates the order instead of calling Meshy or Tripo directly",
         "Supplies a target profile (skinning allowed, max influences 4, budgets) and the canonical clip names",
         "Notes that provider preset names differ (no literal 'attack' or 'death' preset) and maps them to the canon",
         "Runs its own acceptance check on the delivered file and records the manifest and licence"
