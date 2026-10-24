@@ -14,7 +14,7 @@ compatibility: >-
   visual result verified; without one the verdict is NOT_RUN.
 metadata:
   author: ssheleg
-  version: "0.2.2"
+  version: "0.2.3"
 ---
 
 # web3d-runtime — the scene runs, on every GPU it meets, and you can prove how fast

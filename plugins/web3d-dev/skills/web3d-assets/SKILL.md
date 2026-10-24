@@ -14,7 +14,7 @@ compatibility: >-
   The asset service is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.2.2"
+  version: "0.2.3"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
