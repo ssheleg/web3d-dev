@@ -1,12 +1,10 @@
 ---
 name: web3d-runtime
 description: >-
-  Use when building or fixing a realtime 3D web scene with three.js or React Three Fiber:
-  WebGPU and its WebGL2 fallback, TSL shaders, GPU compute, post-processing, device loss,
-  frame budgets. NOT for page heroes and scroll motion (sheleg-design), assets
-  (web3d-assets), character animation (web3d-animation) or a Quest session (xr-dev). Opt
-  out: no web3d, без web3d. Triggers - "three.js WebGPU", "TSL", "R3F", "the 3D scene is
-  slow" / "3D-сцена тормозит".
+  Use when building or fixing a realtime 3D web scene in three.js or React Three Fiber:
+  WebGPU with WebGL2 fallback, TSL. NOT for page heroes (sheleg-design), assets
+  (web3d-assets), animation (web3d-animation) or Quest (xr-dev). Opt out: no web3d, без
+  web3d. Triggers - "3D-сцена тормозит".
 license: MIT
 compatibility: >-
   Any agent host. Facts pinned to three@0.186.1 (r186), @react-three/fiber 9.8.1 and
@@ -14,7 +12,7 @@ compatibility: >-
   visual result verified; without one the verdict is NOT_RUN.
 metadata:
   author: ssheleg
-  version: "0.2.3"
+  version: "0.2.4"
 ---
 
 # web3d-runtime — the scene runs, on every GPU it meets, and you can prove how fast
@@ -128,3 +126,5 @@ the errata found when re-verifying its examples against r186 are among the gotch
 More phrases that route here: "WGSL", "compute shader" / "компьют-шейдер", "particles
 collapsed" / "частицы схлопнулись", "device lost" / "потеря устройства", "React Three
 Fiber", "post-processing" / "постобработка", "WebGL fallback".
+
+Moved here from the description in 0.2.4: "three.js WebGPU", "the 3D scene is slow".

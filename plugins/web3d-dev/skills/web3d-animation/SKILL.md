@@ -1,11 +1,10 @@
 ---
 name: web3d-animation
 description: >-
-  Use when something must move in a three.js or React Three Fiber scene: rigs and clips,
-  blending, retargeting, root motion, morph targets, crowds, GPU-driven motion. NOT for
-  scroll or UI motion (sheleg-design), rendered video (hyperframes) or Unity and Unreal. Opt
-  out: no web3d, без web3d. Triggers - "animate the character" / "анимируй персонажа",
-  "retarget Mixamo" / "ретаргетинг", "foot sliding" / "ноги скользят", "AnimationMixer".
+  Use when something moves in a three.js or React Three Fiber scene: rigs, clips,
+  blending, retargeting, morph targets, crowds. NOT for scroll or UI motion
+  (sheleg-design), rendered video (hyperframes) or Unity/Unreal. Opt out: no web3d, без
+  web3d. Triggers - "AnimationMixer", "анимируй персонажа".
 license: MIT
 compatibility: >-
   Any agent host. Facts are pinned to three@0.186.1 (r186). Uses @gltf-transform/cli through
@@ -13,7 +12,7 @@ compatibility: >-
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.2.3"
+  version: "0.2.4"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree
@@ -155,3 +154,6 @@ budgets are `web3d-assets`. This skill owns motion only.
 
 More phrases that route here: "blend idle walk run" / "переход между анимациями", "crowd of
 characters" / "толпа персонажей", "morph targets" / "морф-таргеты".
+
+Moved here from the description in 0.2.4: "animate the character", "retarget Mixamo",
+"ретаргетинг", "foot sliding", "ноги скользят".

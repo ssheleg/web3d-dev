@@ -1,12 +1,10 @@
 ---
 name: web3d-assets
 description: >-
-  Use when a 3D asset must reach a web scene within budget: sourcing models and textures,
-  the glTF pipeline (KTX2, meshopt, Draco), loaders, colour spaces, licences. NOT for scene
-  code (web3d-runtime), motion (web3d-animation), an order in flight (its service's skill)
-  or Quest store assets (xr-dev). Opt out: no web3d, без web3d. Triggers - "compress this
-  GLB" / "сожми модель", "KTX2", "meshopt", "the model is too heavy" / "модель слишком
-  тяжёлая".
+  Use when a 3D asset must fit a web scene's budget: sourcing, the glTF pipeline (KTX2,
+  meshopt, Draco), colour spaces, licences. NOT for scene code (web3d-runtime), motion
+  (web3d-animation) or Quest store assets (xr-dev). Opt out: no web3d, без web3d.
+  Triggers - "compress this GLB" / "сожми модель".
 license: MIT
 compatibility: >-
   Any agent host. Facts pinned to three@0.186.1, @gltf-transform/cli 4.5.0 and gltfpack 1.3.0.
@@ -14,7 +12,7 @@ compatibility: >-
   The asset service is optional: detected through its foundry_* MCP tools or its skill, never assumed.
 metadata:
   author: ssheleg
-  version: "0.2.3"
+  version: "0.2.4"
 ---
 
 # web3d-assets — from a source to the frame, within a budget someone wrote down
@@ -137,3 +135,6 @@ The commands, flags and loader code are in `references/gltf-pipeline.md`. The or
 More phrases that route here: "gltf-transform", "Draco", "budget for a character" / "бюджет
 на персонажа", "where do we get a 3D model" / "где взять 3D-модель",
 "gltfpack".
+
+Moved here from the description in 0.2.4: "the model is too heavy", "модель слишком
+тяжёлая".
