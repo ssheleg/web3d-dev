@@ -1,3 +1,11 @@
+## v0.2.7: the gate asks the umbrella about routed triggers
+
+- **The gate asks the umbrella whether routed triggers are still advertised** (hub board row
+  B-305): `test/validate.py` now calls the hub's `test/advertised_check.js` the way the other
+  members do, in both directions (a routed trigger this member dropped, and an advertised phrase
+  no route reaches). Inside the hub's submodule checkout it fails the gate; in a standalone clone
+  it prints a note, because it cannot look.
+
 ## v0.2.6: web3d-assets description 4 characters shorter
 
 - **web3d-assets' description is 4 characters shorter** ("sourcing, glTF pipeline"): 0.2.5's

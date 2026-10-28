@@ -1,3 +1,10 @@
+## v0.2.7: the gate asks the umbrella about routed triggers (2026-10-28)
+
+- **Done.** the gate asks the umbrella about routed triggers: the family member gate (`test/family_gate.py`, with its shared-mechanism
+  declaration) and the documentation merged since v0.2.6, released.
+- **Next task.** After merge: tag `v0.2.7`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.2.6: web3d-assets description 4 characters shorter (2026-10-28)
 
 - **Done.** web3d-assets description 4 characters shorter: the family member gate (`test/family_gate.py`, with its shared-mechanism
