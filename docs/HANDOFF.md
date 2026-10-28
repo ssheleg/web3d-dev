@@ -1,3 +1,10 @@
+## v0.2.6: web3d-assets description 4 characters shorter (2026-10-28)
+
+- **Done.** web3d-assets description 4 characters shorter: the family member gate (`test/family_gate.py`, with its shared-mechanism
+  declaration) and the documentation merged since v0.2.5, released.
+- **Next task.** After merge: tag `v0.2.6`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.2.5: web3d-assets names a 3D model (2026-10-28)
 
 - **Done.** web3d-assets names a 3D model: the family member gate (`test/family_gate.py`, with its shared-mechanism

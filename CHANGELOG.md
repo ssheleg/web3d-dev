@@ -1,3 +1,9 @@
+## v0.2.6: web3d-assets description 4 characters shorter
+
+- **web3d-assets' description is 4 characters shorter** ("sourcing, glTF pipeline"): 0.2.5's
+  qualified trigger cost one character more than it saved, and the family's description total may
+  fall but never rise (hub ratchet, 11455). Meaning unchanged.
+
 ## v0.2.5: web3d-assets names a 3D model
 
 - **web3d-assets names a 3D model where an ML model reads the same** (hub board row B-297): "the
