@@ -1,3 +1,10 @@
+## v0.2.5: web3d-assets names a 3D model (2026-10-28)
+
+- **Done.** web3d-assets names a 3D model: the family member gate (`test/family_gate.py`, with its shared-mechanism
+  declaration) and the documentation merged since v0.2.4, released.
+- **Next task.** After merge: tag `v0.2.5`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.2.4: descriptions within a 300-character budget (2026-10-25)
 
 - **Done.** Every skill description cut to at most 300 characters (hub B-255 (a)); total 1339 → 884
