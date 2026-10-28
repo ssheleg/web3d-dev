@@ -1,5 +1,10 @@
 # Verification evidence — web3d-dev
 
+## Release candidate: v0.2.5 (2026-10-28)
+
+web3d-assets names a 3D model. Evidence: the repository gate exits 0 on the candidate tree; the PR CI run
+and the tag release run are named in docs/HANDOFF.md.
+
 ## Release candidate: v0.2.4 (2026-10-25)
 
 descriptions within a 300-character budget. Evidence: the repository gate exits 0 on the candidate tree; the PR CI run

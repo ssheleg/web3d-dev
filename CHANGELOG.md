@@ -1,3 +1,11 @@
+## v0.2.5: web3d-assets names a 3D model
+
+- **web3d-assets names a 3D model where an ML model reads the same** (hub board row B-297): "the
+  model is too heavy" / «модель слишком тяжёлая» and «сожми модель» also describe an ML model
+  ("the model is too heavy to deploy on the GPU" routed here, measured), so they now read "the 3D
+  model is too heavy", «3D-модель слишком тяжёлая» and «сожми 3D-модель». The description stays
+  within 300 characters ("a web scene budget").
+
 ## v0.2.4: descriptions within a 300-character budget
 
 - Every skill description now fits a budget of about 300 characters (hub board row B-255 (a)):
