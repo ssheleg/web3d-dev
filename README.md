@@ -2,8 +2,8 @@
 
 Agent skills for building 3D on the web with three.js and React Three Fiber: getting the
 scene to run on every GPU it meets, getting assets into it within a budget, and making things
-in it move. Every API fact is verified against **three.js r186** (`three@0.186.1`), and the
-repository's gate checks each code block against that release's exports.
+in it move. Every API fact is verified against **three.js r187** (`three@0.187.0`, checked
+2026-11-11), and the repository's gate checks each code block against that release's exports.
 
 | Skill | The question it answers |
 |---|---|
@@ -11,7 +11,7 @@ repository's gate checks each code block against that release's exports.
 | [web3d-assets](plugins/web3d-dev/skills/web3d-assets/SKILL.md) | How does a model, texture or character get from a source to the frame within a budget — the glTF pipeline, target profiles, loaders, sourcing and licences, the asset service when present? |
 | [web3d-animation](plugins/web3d-dev/skills/web3d-animation/SKILL.md) | How does it move — the technique, the asset half (rig, clip canon, export, QA) and the runtime half (clock, mixer, blending, crowds, reduced motion)? |
 
-Each skill leads with the failures that are silent in r186 — `render()` before `init()`,
+Each skill leads with the failures that are silent in r187: `render()` before `init()`,
 `positionNode` collapsing instances, `computeAsync` not waiting for the GPU, drei components
 that do not run on WebGPU, a second skin-weight set dropped without a word — and then the
 patterns. References live inside their owning skill and load on demand.
@@ -28,8 +28,8 @@ skill of a machine that runs that service and delegate asset orders to it;
 without it they work by the same principles by hand — target profile, gate twice, one
 manifest per file, licences in four areas, capped spend.
 
-**Neighbours.** Landing-page heroes and scroll motion are `sheleg-design`; a Quest headset
-product is `xr-dev`; rendered video is HyperFrames or Remotion; engine work is Unity's,
+**Neighbours.** A landing-page hero's look and scroll motion are `sheleg-design`; the three.js
+scene inside it is `web3d-runtime`. A Quest headset product is `xr-dev`; rendered video is HyperFrames or Remotion; engine work is Unity's,
 Unreal's or Godot's own skills.
 
 ## Install

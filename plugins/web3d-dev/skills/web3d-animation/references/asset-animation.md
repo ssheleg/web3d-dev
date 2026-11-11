@@ -4,7 +4,7 @@
 auto-rigging or motion provider, when motion data's licence matters, when clips made for one
 skeleton must play on another, or when exporting and checking an animated file.
 
-Verified against three@0.186.1 and the providers' public documentation, re-stated
+Verified against three@0.187.0 (2026-11-11) and the providers' public documentation, re-stated
 2026-09-27 from reads recorded on 2026-09-19. Provider prices and limits move — re-read the
 provider's page before quoting one to a person.
 
@@ -106,7 +106,7 @@ Every row that needs eyes and did not get them is `NOT_RUN`, stated as such.
   <https://developers.tripo3d.ai/en/docs/animations-rig>,
   <https://developers.tripo3d.ai/en/docs/animations-retarget>,
   <https://developers.tripo3d.ai/en/pricing>.
-- three.js r186: GLTFLoader attribute map (`JOINTS_0`/`WEIGHTS_0` only);
+- three.js r187: GLTFLoader attribute map (`JOINTS_0`/`WEIGHTS_0` only);
   `examples/jsm/utils/SkeletonUtils.js` (`retargetClip`).
-- gltf-transform 4.5.0 (`flatten` skips skinned and animated nodes; `resample`); gltfpack 1.3.0
+- gltf-transform 4.5.1 (`flatten` skips skinned and animated nodes; `resample`); gltfpack 1.3.0
   (`-af`).

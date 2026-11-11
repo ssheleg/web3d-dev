@@ -67,7 +67,7 @@ Usage:
 Exit codes:
   0 installed or skipped   2 usage error
   1 corrupted package      3 refused: the web3d-dev PLUGIN is installed in
-                             this home — plain copies would shadow it (pass
+                             this home; plain copies would shadow it (pass
                              --force to write them anyway)
 
 Other install paths:
@@ -114,7 +114,7 @@ function main(argv) {
 
   const skillsRoot = path.join(ROOT, 'plugins/web3d-dev/skills');
   if (!fs.existsSync(skillsRoot)) {
-    console.error(`error: skill sources missing at ${skillsRoot} — corrupted package?`);
+    console.error(`error: skill sources missing at ${skillsRoot}. Is the package corrupted?`);
     return 1;
   }
 
@@ -124,7 +124,7 @@ function main(argv) {
     .map((e) => e.name)
     .sort();
   if (!names.length) {
-    console.error(`error: no skills found under ${skillsRoot} — corrupted package?`);
+    console.error(`error: no skills found under ${skillsRoot}. Is the package corrupted?`);
     return 1;
   }
 
@@ -155,7 +155,7 @@ function main(argv) {
       `           claude plugin update ${spec || 'web3d-dev@web3d-dev'}\n` +
       '         Family launcher (updates every member, prunes shadow copies):\n' +
       '           npx --yes sshlg-skills@latest update\n' +
-      '         Pass --force to write the plain copies anyway — a deliberate choice\n' +
+      '         Pass --force to write the plain copies anyway, as a deliberate choice\n' +
       '         to run two channels, where the stale one wins.'
     );
     return EXIT_PLUGIN_PRESENT;

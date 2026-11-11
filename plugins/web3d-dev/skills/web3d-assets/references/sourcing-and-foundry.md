@@ -5,7 +5,7 @@ a marketplace, a generator, a local model — when a licence decides whether an 
 when writing a prompt for a 3D generator, or when deciding whether the asset service should do
 the work.
 
-Verified against three@0.186.1 and the providers' public pages on 2026-09-27 (provider rows
+Verified against three@0.187.0 (2026-11-11) and the providers' public pages on 2026-09-27 (provider rows
 re-stated from reads recorded 2026-09-19). Prices, limits and licences move: re-read the
 provider's page before quoting one.
 

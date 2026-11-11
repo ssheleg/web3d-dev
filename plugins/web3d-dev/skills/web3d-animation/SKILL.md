@@ -7,12 +7,12 @@ description: >-
   web3d. Triggers - "AnimationMixer", "анимируй персонажа".
 license: MIT
 compatibility: >-
-  Any agent host. Facts are pinned to three@0.186.1 (r186). Uses @gltf-transform/cli through
+  Any agent host. Facts are pinned to three@0.187.0 (r187), checked 2026-11-11. Uses @gltf-transform/cli through
   npx when present for inspection; without it, reads the glTF JSON directly. A browser run is
   needed to call motion verified — without one the verdict is NOT_RUN, never PASS.
 metadata:
   author: ssheleg
-  version: "0.2.7"
+  version: "0.2.8"
 ---
 
 # web3d-animation — decide how it moves, then make both halves agree
@@ -26,8 +26,8 @@ share (`references/clip-canon.md`).
 ## First action — inspect, then report
 
 1. **Version.** Read `three` in `package.json`. Every API fact here is verified against
-   three@0.186.1; on an older release, check `references/runtime-patterns.md` → *Version notes*
-   before trusting a name.
+   three@0.187.0 (checked 2026-11-11); on an older release, check the *Version notes* in
+   `references/runtime-patterns.md` before trusting a name.
 2. **What moves.** List each moving thing and what drives it now: a clip, code, a shader,
    physics, nothing yet.
 3. **What exists.** For every `.glb`/`.gltf`: `npx @gltf-transform/cli inspect <file>` —

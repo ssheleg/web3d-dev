@@ -1,3 +1,11 @@
+## v0.2.8: re-pinned to three r187; asset profiles are registered by the agent (2026-11-11)
+
+- **Done.** Audit 2026-11-11 findings W1 to W3 and the X4 mirror: three r187, fiber 9.8.2 and
+  gltf-transform 4.5.1 pins with remapped citations; web3d-assets registers a missing target
+  profile itself; the hero boundary with sheleg-design; the immersive WebXR renderer line.
+- **Next task.** After merge: tag `v0.2.8`, watch the release, then the sshlg-skills pin bump; then
+  the highest open board row.
+
 ## v0.2.7: the gate asks the umbrella about routed triggers (2026-10-28)
 
 - **Done.** the gate asks the umbrella about routed triggers: the family member gate (`test/family_gate.py`, with its shared-mechanism

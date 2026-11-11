@@ -4,8 +4,8 @@
 mixer setup, transitions, additive layers, root motion, retargeting, crowds, morph
 instancing, vertex-animation textures, or React Three Fiber animation.
 
-Verified against three@0.186.1 on 2026-09-27; line references are to the published package
-(`src/…`, `examples/jsm/…`) and to the r186 examples (`examples/<name>.html`).
+Verified against three@0.187.0 on 2026-11-11 (first verified on r186, 2026-09-27); line references
+are to the published package (`src/…`, `examples/jsm/…`) and to the examples (`examples/<name>.html`).
 
 ## Contents
 
@@ -222,7 +222,7 @@ A VAT is only worth delivering to a runtime that decodes it; check before orderi
 mixer.stopAllAction();
 mixer.uncacheRoot(hero);
 hero.traverse((o) => { o.geometry?.dispose(); o.material?.dispose?.(); });
-await renderer.dispose();          // async in r186
+await renderer.dispose();          // async since r186
 ```
 
 ## Version notes
@@ -231,10 +231,11 @@ await renderer.dispose();          // async in r186
 - r186: `render()` throws before `init()`; `renderer.dispose()` is async; bone counts above the
   uniform-buffer limit are supported; GLTFLoader skips skinning for meshes without skin
   attributes.
+- r187: removes code deprecated in r177; nothing this file names changed.
 - On an older release, re-verify each name above against that release before relying on it.
 
-Sources: three@0.186.1 package (`src/animation/*`, `src/core/Timer.js`,
+Sources: three@0.187.0 package (`src/animation/*`, `src/core/Timer.js`,
 `src/objects/BatchedMesh.js`, `src/objects/InstancedMesh.js`,
-`examples/jsm/utils/SkeletonUtils.js:17-25,215-232`), r186 examples named above, drei
-10.7.9 `core/useAnimations.js`, R3F 9.8.1 store. Full rows:
+`examples/jsm/utils/SkeletonUtils.js:17-25,215-232`), examples named above, drei
+10.7.9 `core/useAnimations.js`, R3F 9.8.2 store. Full rows:
 `docs/evidence/research/2026-09-27-docs-study.md` in the repository.

@@ -4,8 +4,8 @@
 when code looks a clip up by name. This file ships identically in `web3d-assets` and
 `web3d-animation`; the validator fails if the two copies differ — edit both in one change.
 
-Verified against three@0.186.1 and the rigging providers' public documentation on
-2026-09-27 (sources at the end).
+Verified against three@0.187.0 on 2026-11-11 and the rigging providers' public documentation
+on 2026-09-27 (sources at the end).
 
 ## Contents
 
@@ -82,7 +82,7 @@ Two consequences worth stating before an order is placed:
 
 ## Sources
 
-- three.js r186: `examples/jsm/loaders/GLTFLoader.js:2286-2287` (only `JOINTS_0`/`WEIGHTS_0`),
+- three.js r187: `examples/jsm/loaders/GLTFLoader.js:2339-2340` (only `JOINTS_0`/`WEIGHTS_0`),
   `src/animation/AnimationAction.js:771-772` (unclamped finish disables the action); root motion
   absent from `src` and `examples/jsm`.
 - Tripo rigging and presets: <https://developers.tripo3d.ai/en/docs/animations-rig>,

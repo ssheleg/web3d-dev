@@ -4,8 +4,8 @@
 anything that uses atomics or reads GPU results back, or when porting a `ShaderMaterial` or
 `onBeforeCompile` shader to WebGPU.
 
-Verified against three@0.186.1 on 2026-09-27 (published `build/three.tsl.js` export list,
-`src/nodes/*`, and the r186 compute examples).
+Verified against three@0.187.0 on 2026-11-11 (re-pinned from r186, first verified 2026-09-27;
+published `build/three.tsl.js` export list, `src/nodes/*`, and the compute examples).
 
 ## Contents
 
@@ -110,9 +110,11 @@ renderer.setAnimationLoop(() => {
 ```
 
 - `instancedArray` is per-instance; `attributeArray` is per-vertex. Both accept struct types.
-- `renderer.compute()` is synchronous after `init()`. `computeAsync()` is deprecated and
-  **does not** wait for the GPU.
-- `compileComputeAsync(nodes)` (r186) builds compute pipelines ahead of the first frame.
+- `renderer.compute()` is synchronous after `init()`. `computeAsync()` only awaits `init()`;
+  it **does not** wait for the GPU.
+- `compileComputeAsync(nodes)` (since r186) builds compute pipelines ahead of the first frame.
+- r187: passing a dispatch size to `renderer.compute()` for a node built with `compute(count)`
+  throws; a kernel dispatched by size is built with `computeKernel()`.
 
 ## Particles — the official pattern
 
@@ -172,10 +174,10 @@ error — the scene does not crash, it is just wrong.
 
 ## Sources
 
-three@0.186.1: `build/three.tsl.js:691` (export list), `src/nodes/core/VarNode.js:372-373`,
+three@0.187.0: `build/three.tsl.js:41903` (export list), `src/nodes/core/VarNode.js:281-282`,
 `src/nodes/core/UniformNode.js:241`, `src/nodes/utils/Timer.js`, `src/nodes/utils/Oscillators.js`,
 `src/nodes/accessors/Arrays.js:15-47`, `src/nodes/accessors/StorageBufferNode.js:267-296`,
 `src/nodes/gpgpu/ComputeNode.js`, `src/materials/nodes/NodeMaterial.js:766-810`,
-`src/renderers/common/Renderer.js:2097-2126,2877-2996`, `src/renderers/common/ReadbackBuffer.js`,
-`src/renderers/common/nodes/NodeLibrary.js:52-72`; examples `webgpu_compute_particles`,
+`src/renderers/common/Renderer.js:2420-2449,3218-3347`, `src/renderers/common/ReadbackBuffer.js`,
+`src/renderers/common/nodes/NodeLibrary.js:45-65`; examples `webgpu_compute_particles`,
 `webgpu_compute_reduce`; the three.js TSL wiki page.

@@ -1,3 +1,27 @@
+## v0.2.8: re-pinned to three r187; asset profiles are registered by the agent
+
+- **Re-pinned to three@0.187.0 (r187), @react-three/fiber 9.8.2 and @gltf-transform/cli 4.5.1**,
+  checked 2026-11-11 with `npm view`; drei 10.7.9 and gltfpack 1.3.0 are still current.
+  `THREE_PIN` moved and `test/fixtures/three-exports.json` was regenerated; every code block
+  resolves against r187. r187 removes code deprecated in r177 (`transformedNormalView`/`World`,
+  `transformedClearcoatNormalView`, `ColorManagement.fromWorkingColorSpace`/`toWorkingColorSpace`),
+  stops exporting `CubeUVReflectionMapping`, renames `ProxyNodeMaterial` and
+  `getProjectionDepth()`: none was named in the doctrine. Every `file:line` source citation was
+  remapped to the r187 package by content. Version notes record r187, including the new throw
+  when a dispatch size is passed to `renderer.compute()` for a `compute(count)` node.
+- **Small corrections found while re-pinning:** `computeAsync()` is not deprecated (it only
+  awaits `init()` and does not wait for the GPU); GLTFLoader r187 adds
+  `KHR_materials_diffuse_roughness`; gltf-transform 4.5.1 adds `--resize` to `etc1s` and `uastc`.
+- **web3d-assets registers a missing target profile itself**, through the asset service's own
+  tool or API; with no route it files a backlog row and says so. The operator is asked only for
+  a human gate.
+- **web3d-runtime and the README split a page hero cleanly:** its look and scroll motion are
+  sheleg-design's, the three.js scene inside it is web3d-runtime's. The description is unchanged.
+- **web3d-runtime names the renderer an immersive WebXR session needs** (`WebGLRenderer`, or
+  `WebGPURenderer` on its WebGL2 backend; the WebGPU backend needs `XRGPUBinding`), pointing to
+  xr-dev `quest-webxr` for the headset side.
+- Installer and gate output no longer print an em dash.
+
 ## v0.2.7: the gate asks the umbrella about routed triggers
 
 - **The gate asks the umbrella whether routed triggers are still advertised** (hub board row

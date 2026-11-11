@@ -4,8 +4,8 @@
 loop and clock, colour management and tone mapping, the post-processing pipeline, device
 loss handling, or teardown.
 
-Verified against three@0.186.1 on 2026-09-27 (published package source and the r186
-examples; rows in `docs/evidence/research/2026-09-27-docs-study.md`).
+Verified against three@0.187.0 on 2026-11-11 (re-pinned from r186, first verified 2026-09-27;
+published package source and the examples; rows in `docs/evidence/research/2026-09-27-docs-study.md`).
 
 ## Contents
 
@@ -127,7 +127,7 @@ renderer.onError = (err) => log('gpu-error', err);   // validation, out-of-memor
 ```js
 scene.traverse((o) => { o.geometry?.dispose(); [o.material].flat().forEach((m) => m?.dispose()); });
 texture.dispose(); renderTarget.dispose();
-await renderer.dispose();         // async in r186
+await renderer.dispose();         // async since r186
 ```
 
 `Object3D.dispose()` is new in r186; an override must call `super.dispose()`. Image bitmaps
@@ -140,12 +140,13 @@ from GLTFLoader are released only by disposing their textures.
 | r181 | `*Async` render/clear/feature methods deprecated |
 | r183 | `Clock` deprecated → `Timer` in core; `PostProcessing` → `RenderPipeline`; `colorBufferType` → `outputBufferType`; `PCFShadowMap` soft |
 | r186 | `render()` throws before `init()`; `dispose()` async; `PCFSoftShadowMap` removed on WebGPU; CommonJS deprecated; `compileComputeAsync`; `ReadbackBuffer`; `onError` |
+| r187 | Code deprecated in r177 removed (`transformedNormalView`/`World`, `transformedClearcoatNormalView`, `ColorManagement.fromWorkingColorSpace`/`toWorkingColorSpace`); `CubeUVReflectionMapping` no longer exported; `ProxyNodeMaterial` → `NodeMaterialInstance`; `getProjectionDepth()` → `projectionDepth()`; a dispatch size passed to `renderer.compute()` for a node built with `compute(count)` throws (use `computeKernel()`). None of these names was in this pack's doctrine |
 
 ## Sources
 
-three@0.186.1: `src/renderers/common/Renderer.js` (init 784-812, render guard 1496-1500,
-loop 2067-2071, device loss 1348-1362, dispose 2696-2725), `src/renderers/webgpu/WebGPURenderer.js:34-67`,
+three@0.187.0: `src/renderers/common/Renderer.js` (init 899-927, render guard 1819-1823,
+loop 2387-2394, device loss 1627-1641, dispose 3019-3063), `src/renderers/webgpu/WebGPURenderer.js:34-67`,
 `src/renderers/webgpu/WebGPUBackend.js:217-281`, `src/core/Timer.js`, `src/core/Clock.js`,
 `src/renderers/common/RenderPipeline.js`, `examples/jsm/capabilities/WebGPU.js`;
 examples `webgpu_postprocessing_bloom`, `webgpu_loader_gltf_compressed`; three.js Migration
-Guide 181→186; r186 release notes.
+Guide 181→186; r186 and r187 release notes.

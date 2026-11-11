@@ -3,8 +3,8 @@
 **Read this when** running any processing step on a `.glb`/`.gltf`, choosing between
 gltf-transform and gltfpack, or wiring the loader in three.js or React Three Fiber.
 
-Verified against three@0.186.1, @gltf-transform/cli 4.5.0 and gltfpack 1.3.0 on 2026-09-27
-(package sources and CLI help; rows in `docs/evidence/research/2026-09-27-docs-study.md`).
+Verified against three@0.187.0, @gltf-transform/cli 4.5.1 and gltfpack 1.3.0 on 2026-11-11
+(re-pinned from r186 and 4.5.0, first verified 2026-09-27; package sources and CLI help; rows in `docs/evidence/research/2026-09-27-docs-study.md`).
 
 ## Contents
 
@@ -13,7 +13,7 @@ Verified against three@0.186.1, @gltf-transform/cli 4.5.0 and gltfpack 1.3.0 on 
 - Step by step
 - gltfpack
 - Choosing compression
-- Loaders: three.js r186
+- Loaders: three.js r187
 - Loaders: React Three Fiber and drei
 - Sources
 
@@ -33,7 +33,7 @@ npx @gltf-transform/cli optimize in.glb out.glb \
   --compress meshopt --texture-compress webp --texture-size 2048
 ```
 
-Defaults in 4.5.0: `--compress meshopt` (`draco | meshopt | quantize | false`),
+Defaults in 4.5.1 (unchanged from 4.5.0): `--compress meshopt` (`draco | meshopt | quantize | false`),
 `--texture-compress auto` (`ktx2 | webp | avif | auto | false`), `--texture-size 2048`,
 simplify on (`--simplify-error 0.0001`), and instance, palette, flatten, join, weld, resample
 and prune all on. `flatten` skips skin joints and animated nodes, so `optimize` keeps
@@ -53,7 +53,7 @@ Use `optimize` for a first pass; use the individual steps when a budget needs co
 | Animation | `resample` | removes redundant keyframes losslessly |
 | Simplify | `simplify --ratio 0.5 --error 0.001 --lock-border` | check the silhouette after |
 | Instance | `instance --min 5` | repeated meshes become `EXT_mesh_gpu_instancing` |
-| Resize | `resize --width 1024 --height 1024` | before encoding, not after |
+| Resize | `resize --width 1024 --height 1024` | before encoding, not after (4.5.1: `etc1s`/`uastc --resize <size>` does it in the same step) |
 | KTX2 colour | `etc1s --quality 128` | small, colour textures |
 | KTX2 detail | `uastc --level 2 --zstd 18` | normal maps and fine detail |
 | WebP / AVIF | `webp`, `avif` | when KTX2 is not wanted; no GPU compression |
@@ -95,7 +95,7 @@ and cannot read Draco input. It also drops unknown and vendor extensions and doe
 | GPU texture memory matters (most scenes) | KTX2 (ETC1S colour, UASTC normals) | stays compressed on the GPU |
 | Simple pipeline, no GPU compression | WebP/AVIF | smaller downloads, full-size GPU memory |
 
-## Loaders: three.js r186
+## Loaders: three.js r187
 
 ```js
 import * as THREE from 'three/webgpu';
@@ -121,11 +121,11 @@ const gltf = await loader.loadAsync('/models/scene.glb');
 await renderer.compileAsync(gltf.scene, camera, scene);  // build pipelines before the first frame
 ```
 
-GLTFLoader r186 reads, built in: Draco, `KHR_meshopt_compression` and
+GLTFLoader r187 reads, built in: Draco, `KHR_meshopt_compression` and
 `EXT_meshopt_compression`, `KHR_texture_basisu`, `KHR_mesh_quantization`,
 `KHR_texture_transform`, `EXT_mesh_gpu_instancing`, `EXT_texture_webp`, `EXT_texture_avif`,
-`KHR_lights_punctual` and the `KHR_materials_*` set (anisotropy, clearcoat, dispersion,
-emissive_strength, ior, iridescence, sheen, specular, transmission, unlit, volume) plus
+`KHR_lights_punctual` and the `KHR_materials_*` set (anisotropy, clearcoat, diffuse_roughness
+(new in r187), dispersion, emissive_strength, ior, iridescence, sheen, specular, transmission, unlit, volume) plus
 `EXT_materials_bump`. Plugin-only: `KHR_animation_pointer`, `KHR_materials_variants`,
 Gaussian splats, `MSFT_texture_dds`, `NEEDLE_progressive`.
 
@@ -143,10 +143,10 @@ Gaussian splats, `MSFT_texture_dds`, `NEEDLE_progressive`.
 
 ## Sources
 
-- three@0.186.1: `examples/jsm/loaders/GLTFLoader.js:84-112,836,1127,1330,2286-2287`,
-  `examples/jsm/loaders/KTX2Loader.js:153-243`, `examples/jsm/loaders/DRACOLoader.js:102-132`,
+- three@0.187.0: `examples/jsm/loaders/GLTFLoader.js:84-113,849,1180,1383,2339-2340`,
+  `examples/jsm/loaders/KTX2Loader.js:162-252`, `examples/jsm/loaders/DRACOLoader.js:102-132`,
   `examples/webgpu_loader_gltf_compressed.html`.
-- @gltf-transform/cli 4.5.0: `src/cli.ts` (command list and flags; `optimize` KTX2 slot split
+- @gltf-transform/cli 4.5.1: `src/cli.ts` (command list and flags; `optimize` KTX2 slot split
   421-445), `src/transforms/toktx.ts`
   (`ktx` ≥ 4.4.0), `@gltf-transform/functions/src/flatten.ts:53-60`.
 - gltfpack 1.3.0: `gltfpack -h`, README (native builds for texture compression).
