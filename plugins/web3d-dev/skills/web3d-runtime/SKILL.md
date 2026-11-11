@@ -7,12 +7,12 @@ description: >-
   web3d. Triggers - "3D-сцена тормозит".
 license: MIT
 compatibility: >-
-  Any agent host. Facts pinned to three@0.186.1 (r186), @react-three/fiber 9.8.1 and
-  @react-three/drei 10.7.9. A browser with WebGPU (or a headless GPU run) is needed to call a
+  Any agent host. Facts pinned to three@0.187.0 (r187), @react-three/fiber 9.8.2 and
+  @react-three/drei 10.7.9, checked 2026-11-11. A browser with WebGPU (or a headless GPU run) is needed to call a
   visual result verified; without one the verdict is NOT_RUN.
 metadata:
   author: ssheleg
-  version: "0.2.7"
+  version: "0.2.8"
 ---
 
 # web3d-runtime — the scene runs, on every GPU it meets, and you can prove how fast
@@ -22,10 +22,13 @@ entry point, deprecated `Clock`, and still ships a WebGL2 backend underneath the
 Most bugs here are silent — the scene renders, just wrongly. So this skill leads with the
 failures, then the patterns.
 
+A page hero splits in two: its look, layout and scroll motion are `sheleg-design`'s; the
+three.js scene rendered inside it (renderer, loop, shaders, frame time) is this skill's.
+
 ## First action — inspect, then report
 
 1. **Versions.** `three`, `@react-three/fiber`, `@react-three/drei` from `package.json`. Facts
-   here are pinned to r186; on another release, check `references/renderer-and-loop.md` →
+   here are pinned to r187; on another release, check `references/renderer-and-loop.md` →
    *Version notes* before trusting a name.
 2. **Renderer.** `WebGPURenderer` from `three/webgpu`, or the classic `WebGLRenderer`? Custom
    `ShaderMaterial`, `RawShaderMaterial` or `onBeforeCompile` anywhere? Those do not run on
@@ -49,7 +52,7 @@ Choose the rung per scene, top down; every rung must still be a working page.
    static image or CSS/SVG still, fully legible. This is `sheleg-design`'s degrade-to-calm
    rule applied to a 3D scene.
 
-## Gotchas — r186, each one silent or surprising
+## Gotchas in r187, each one silent or surprising
 
 - **`render()` throws before `await renderer.init()`** (so do `clear()`, `hasFeature()`,
   `initTexture()`); `setAnimationLoop` awaits init itself. `renderAsync` and friends are
@@ -63,7 +66,7 @@ Choose the rung per scene, top down; every rung must still be a working page.
   is the same bug — use `If`/`select`.
 - **Atomics need `storage(buf, 'uint', n).toAtomic()`** before `atomicAdd`.
 - **`computeAsync()` does not wait for the GPU.** Only `renderer.getArrayBufferAsync()` reads
-  results back to the CPU (with a reusable `THREE.ReadbackBuffer` in r186).
+  results back to the CPU (with a reusable `THREE.ReadbackBuffer` since r186).
 - **`ShaderMaterial`, `RawShaderMaterial` and `onBeforeCompile` have no WebGPU mapping** — the
   object renders as a plain node material with a "not compatible" error. Port to TSL. About
   twenty drei components are built on them and fail the same way.
@@ -77,8 +80,11 @@ Choose the rung per scene, top down; every rung must still be a working page.
 - **Device loss:** use `renderer.onDeviceLost` (and `renderer.onError` for validation and
   out-of-memory errors). It exists on both backends; hooking the WebGPU device directly breaks
   under the WebGL2 fallback.
-- **R3F 9.8.1 defaults differ from three's:** ACES tone mapping on, `shadows={true}` selects
+- **R3F 9.8.2 defaults differ from three's:** ACES tone mapping on, `shadows={true}` selects
   the removed soft shadow map (use `shadows="percentage"`), and `useFrame` delta is unclamped.
+- **Immersive WebXR needs a renderer that can enter it:** `WebGLRenderer` with `renderer.xr`,
+  or `WebGPURenderer` on its WebGL2 backend; its WebGPU backend needs `XRGPUBinding` and the
+  `webgpu` session feature. The headset side (Quest Browser, PWA) is xr-dev `quest-webxr`.
 
 ## The procedure
 
@@ -103,7 +109,7 @@ Choose the rung per scene, top down; every rung must still be a working page.
 - **No browser or GPU in this host** → build, type-check and review; report visual and
   frame-time gates as `NOT_RUN` with the page and the device a person must use. Never report
   "smooth" from reading code.
-- **The project is on an older three.js** → name the release gap; do not apply r186 names
+- **The project is on an older three.js** → name the release gap; do not apply r187 names
   blindly, and do not upgrade the dependency without the operator.
 - **R3F project, WebGPU wanted** → the async `gl` factory pattern in
   `references/performance-and-r3f.md`; list the drei components the scene uses that will not

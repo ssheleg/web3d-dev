@@ -5,7 +5,7 @@
 | Field | Value |
 |---|---|
 | Pack | `web3d-dev` |
-| Version | `0.2.7` |
+| Version | `0.2.8` |
 | Skills | `web3d-runtime`, `web3d-assets`, `web3d-animation` |
 | License | MIT |
 | Source | https://github.com/ssheleg/web3d-dev |
@@ -40,7 +40,7 @@ the asset service when it is present rather than to a provider directly.
 | Reads credentials | None | nothing here reads or stores a secret |
 | Network at runtime | Low | `npx` fetches gltf-transform when an agent runs it; nothing fetches on load |
 | Spends money | Gated | generation providers and asset-service orders are paid; the skills require a cap and an idempotency key, and stop for the operator above budget |
-| Stale content | Medium | three.js moves every month; every fact is pinned to r186 and the gate checks code blocks against that release's exports |
+| Stale content | Medium | three.js moves every month; every fact is pinned to r187 and the gate checks code blocks against that release's exports |
 
 ## Maintenance
 

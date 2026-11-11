@@ -1,5 +1,13 @@
 # Verification evidence — web3d-dev
 
+## Release candidate: v0.2.8 (2026-11-11)
+
+Re-pinned to three r187. Evidence: the repository gate exits 0 on the candidate tree, with
+`test/fixtures/three-exports.json` regenerated from three@0.187.0; `npm view` on 2026-11-11 read
+three 0.187.0, @react-three/fiber 9.8.2, @gltf-transform/cli 4.5.1, @react-three/drei 10.7.9 and
+gltfpack 1.3.0; the r187 GitHub release notes and the v4.5.0...v4.5.1 gltf-transform compare were
+read. The PR CI run and the tag release run are named in docs/HANDOFF.md.
+
 ## Release candidate: v0.2.7 (2026-10-28)
 
 the gate asks the umbrella about routed triggers. Evidence: the repository gate exits 0 on the candidate tree; the PR CI run

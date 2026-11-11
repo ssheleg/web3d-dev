@@ -235,7 +235,7 @@ def check_no_stray_skill_md():
         if ".git" in p.parts:
             continue
         if p.parent.parent != SKILLS_DIR:
-            fail(f"stray SKILL.md outside the skill dirs: {p.relative_to(ROOT)} — it would ship as a real skill")
+            fail(f"stray SKILL.md outside the skill dirs: {p.relative_to(ROOT)}: it would ship as a real skill")
 
 
 @check
@@ -292,7 +292,7 @@ def check_links_resolve_and_stay_inside():
 # Every API claim in this pack is checked against ONE three.js release. A second
 # version appearing anywhere means a fact was re-checked against a different
 # release than its neighbours, and the reader cannot tell which one is current.
-THREE_PIN = "0.186.1"
+THREE_PIN = "0.187.0"
 # One contract, two homes: the skills CLI ships only a skill's own directory, so
 # the clip canon is duplicated into both skills that need it and must stay equal.
 SHARED_CONTRACTS = {"clip-canon.md": ("web3d-assets", "web3d-animation")}
@@ -306,12 +306,12 @@ def check_one_three_pin_across_the_pack():
             seen.setdefault(v, []).append(md.relative_to(ROOT).as_posix())
     for v, where in sorted(seen.items()):
         if v != THREE_PIN:
-            fail(f"three@{v} named in {where[0]} — the pack is verified against three@{THREE_PIN}; "
+            fail(f"three@{v} named in {where[0]}; the pack is verified against three@{THREE_PIN}; "
                  "re-check the fact or move the pin everywhere at once")
     for s in skills():
         for ref in sorted((s / "references").glob("*.md")) if (s / "references").is_dir() else []:
             if "Verified against" not in ref.read_text():
-                fail(f"{s.name}/references/{ref.name}: no 'Verified against' line — a fact without "
+                fail(f"{s.name}/references/{ref.name}: no 'Verified against' line: a fact without "
                      "its version and date reads exactly like one from memory")
 
 
@@ -324,7 +324,7 @@ def check_shared_contracts_are_identical():
             fail(f"{o}: shared contract references/{name} is missing")
         texts = {o: p.read_text() for o, p in copies.items() if p.is_file()}
         if len(set(texts.values())) > 1:
-            fail(f"references/{name} differs between {', '.join(sorted(texts))} — one contract, "
+            fail(f"references/{name} differs between {', '.join(sorted(texts))}; one contract, "
                  "two homes; edit both in the same change")
 
 
@@ -340,11 +340,11 @@ def check_code_blocks_resolve_against_the_pinned_release():
     check only reads it, so `npm test` stays offline.
     """
     if not EXPORTS.is_file():
-        fail("test/fixtures/three-exports.json is missing — run python3 test/gen_three_exports.py")
+        fail("test/fixtures/three-exports.json is missing: run python3 test/gen_three_exports.py")
         return
     snap = json.loads(EXPORTS.read_text())
     if snap.get("three") != THREE_PIN:
-        fail(f"three-exports.json is for three@{snap.get('three')}, the pack pins {THREE_PIN} — regenerate it")
+        fail(f"three-exports.json is for three@{snap.get('three')}, the pack pins {THREE_PIN}; regenerate it")
     modules = {k: set(v) for k, v in snap["modules"].items()}
     addons = {k: set(v) for k, v in snap["addons"].items()}
 
@@ -383,7 +383,7 @@ def check_code_blocks_resolve_against_the_pinned_release():
                     if member not in names:
                         fail(f"{rel}: `{alias}.{member}` does not exist in three@{THREE_PIN}")
     if checked == 0:
-        fail("no three.js import or namespace member was found in any code block — the check "
+        fail("no three.js import or namespace member was found in any code block: the check "
              "matched nothing, which reads exactly like a clean pass")
 
 
@@ -513,11 +513,11 @@ def main(argv: list[str]) -> int:
     for fn in CHECKS:
         fn()
     if FAILURES:
-        print(f"FAIL — {len(FAILURES)} problem(s):")
+        print(f"FAIL: {len(FAILURES)} problem(s):")
         for f in FAILURES:
             print(f"  - {f}")
         return 1
-    print(f"OK — {len(CHECKS)} checks, {len(skills())} skills, "
+    print(f"OK: {len(CHECKS)} checks, {len(skills())} skills, "
           f"{sum(1 for _ in PLUGIN_DIR.rglob('references/*.md'))} references")
     return 0
 

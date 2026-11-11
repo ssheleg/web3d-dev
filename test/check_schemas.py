@@ -42,7 +42,7 @@ def main() -> int:
     try:
         import jsonschema
     except ImportError:
-        print("CANNOT LOOK: jsonschema is not installed — `pip install jsonschema`.")
+        print("CANNOT LOOK: jsonschema is not installed: `pip install jsonschema`.")
         print("Refusing to exit 0: a check that did not run is not a check that passed.")
         return 2
 
@@ -64,10 +64,10 @@ def main() -> int:
             final, schema = fetch(declared)
         except urllib.error.HTTPError as exc:
             problems.append(f"{rel}: {declared} -> HTTP {exc.code} "
-                            f"(final {exc.url}) — the declared schema does not resolve")
+                            f"(final {exc.url}): the declared schema does not resolve")
             continue
         except (urllib.error.URLError, OSError, json.JSONDecodeError) as exc:
-            print(f"CANNOT LOOK: fetching {declared} failed — {exc}")
+            print(f"CANNOT LOOK: fetching {declared} failed: {exc}")
             return 2
 
         title = schema.get("title", "(untitled)")
@@ -80,7 +80,7 @@ def main() -> int:
         try:
             validator.check_schema(schema)
         except jsonschema.exceptions.SchemaError as exc:
-            problems.append(f"{rel}: the served schema is itself invalid — {exc.message}")
+            problems.append(f"{rel}: the served schema is itself invalid: {exc.message}")
             continue
         errors = sorted(validator(schema).iter_errors(doc), key=lambda e: list(e.path))
         if errors:

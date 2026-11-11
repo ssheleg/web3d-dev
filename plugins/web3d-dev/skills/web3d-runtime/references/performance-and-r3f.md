@@ -3,8 +3,9 @@
 **Read this when** a scene is slow or must be proven fast, when choosing where frame time
 goes, or when a React Three Fiber project moves to WebGPU or uses drei on it.
 
-Verified against three@0.186.1, @react-three/fiber 9.8.1 and @react-three/drei 10.7.9 on
-2026-09-27 (package sources and the R3F canvas documentation).
+Verified against three@0.187.0, @react-three/fiber 9.8.2 and @react-three/drei 10.7.9 on
+2026-11-11 (re-pinned from r186 and fiber 9.8.1, first verified 2026-09-27; package sources
+and the R3F canvas documentation).
 
 ## Contents
 
@@ -95,7 +96,7 @@ export function Scene() {
   and unclamped: clamp it yourself.
 - `frameloop="demand"` renders only after `invalidate()` — right for configurators and viewers
   that sit still; `"never"` hands frames to `advance(timestamp)`.
-- R3F 9.8.1 awaits r186's async `renderer.dispose()` on unmount.
+- R3F 9.8.2 awaits the async `renderer.dispose()` (since r186) on unmount.
 - Peers: React ≥19 <19.4, three ≥0.156 (fiber); drei needs fiber ^9 and three ≥0.159.
 
 ## drei on WebGPU
@@ -123,9 +124,9 @@ the ladder is the calm static state from this skill's body.
 
 ## Sources
 
-three@0.186.1: `src/renderers/common/Renderer.js:896,1115,3018-3022` (compile, timestamps),
-`src/renderers/common/Info.js:65-89`, `src/renderers/common/Backend.js:76,608`,
-`examples/jsm/inspector/Inspector.js:306-329`. @react-three/fiber 9.8.1: canvas docs
+three@0.187.0: `src/renderers/common/Renderer.js:1019,1359,3369-3373` (compile, timestamps),
+`src/renderers/common/Info.js:65-89`, `src/renderers/common/Backend.js:76,680`,
+`examples/jsm/inspector/Inspector.js:307-330`. @react-three/fiber 9.8.2: canvas docs
 ("WebGPU"), store (Clock, shadows, tone mapping, dispose). @react-three/drei 10.7.9: grep of
 `core/*.js` and `materials/*.js` for `ShaderMaterial`/`onBeforeCompile`/`ShaderChunk`;
 `core/PerformanceMonitor.js`, `core/AdaptiveDpr.js`, `core/Detailed.js`.

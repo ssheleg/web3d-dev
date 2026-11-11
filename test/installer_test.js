@@ -163,7 +163,7 @@ caseRun('--force overrides the refusal, deliberately', (home) => {
   assert(allSkillsInstalled(home), 'forced install wrote nothing');
 });
 
-caseRun('corrupt installed_plugins.json reads as "no plugin" — install, never crash', (home) => {
+caseRun('corrupt installed_plugins.json reads as "no plugin": install, never crash', (home) => {
   const dir = path.join(home, '.claude', 'plugins');
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'installed_plugins.json'), '{ this is not json');
@@ -213,7 +213,7 @@ if (POSIX) {
     assert(bad.status === 2, `unknown arg exit ${bad.status}, expected 2`);
   });
 
-  caseRun('install.sh: plugin present — refuse, exit 3, nothing written; --force installs', (home) => {
+  caseRun('install.sh: plugin present: refuse, exit 3, nothing written; --force installs', (home) => {
     declarePlugin(home, 'web3d-dev@web3d-dev');
     const r = shInstaller(home);
     assert(r.status === 3, `exit ${r.status}, expected 3\n${r.out}`);
@@ -238,7 +238,7 @@ if (POSIX) {
     assert(allSkillsInstalled(home), 'install did not happen');
   });
 } else {
-  console.log('skip: install.sh cases (POSIX only — use npx, the plugin, or the skills CLI on Windows)');
+  console.log('skip: install.sh cases (POSIX only: use npx, the plugin, or the skills CLI on Windows)');
 }
 
 // ----------------------------------------------------------------- residue --
@@ -254,16 +254,16 @@ for (const h of homes) {
   }
 }
 if (kept.length === 0) {
-  console.log(`residue: this run left nothing — ${homes.length} temp home(s) created, ${removed} removed`);
+  console.log(`residue: this run left nothing: ${homes.length} temp home(s) created, ${removed} removed`);
 } else {
   console.log(`residue: ${kept.length} of ${homes.length} temp home(s) KEPT`);
   for (const h of kept) {
-    console.log(`  ${h.dir}  (case: ${h.label})  — rm -rf '${h.dir}' when done`);
+    console.log(`  ${h.dir}  (case: ${h.label}) ; rm -rf '${h.dir}' when done`);
   }
 }
 
 if (failures) {
-  console.error(`FAIL: installer — ${failures} case(s) red`);
+  console.error(`FAIL: installer: ${failures} case(s) red`);
   process.exit(1);
 }
-console.log(`PASS: installer — ${homes.length} case(s)${POSIX ? '' : ' (install.sh skipped on win32)'}`);
+console.log(`PASS: installer: ${homes.length} case(s)${POSIX ? '' : ' (install.sh skipped on win32)'}`);

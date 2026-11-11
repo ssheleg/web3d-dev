@@ -129,6 +129,8 @@
   "exporters/EXRExporter.js": [
    "EXRExporter",
    "NO_COMPRESSION",
+   "PIZ_COMPRESSION",
+   "RLE_COMPRESSION",
    "ZIPS_COMPRESSION",
    "ZIP_COMPRESSION"
   ],
@@ -299,6 +301,10 @@
   ],
   "inspector/RendererInspector.js": [
    "RendererInspector"
+  ],
+  "inspector/Storage.js": [
+   "getItem",
+   "setItem"
   ],
   "inspector/extensions/color-grading/ColorGrading.js": [
    "ColorGrading"
@@ -782,13 +788,10 @@
    "MeshoptSimplifier"
   ],
   "libs/mikktspace.module.js": [
-   "__wbindgen_rethrow",
-   "__wbindgen_string_new",
    "dispose",
    "generateTangents",
    "isReady",
-   "ready",
-   "wasm"
+   "ready"
   ],
   "libs/motion-controllers.module.js": [
    "Constants",
@@ -801,9 +804,6 @@
   ],
   "libs/stats.module.js": [
    "default"
-  ],
-  "libs/surfaceNet.js": [
-   "surfaceNet"
   ],
   "libs/tween.module.js": [
    "Easing",
@@ -834,6 +834,9 @@
    "DynamicLighting",
    "default"
   ],
+  "lighting/LightMapper.js": [
+   "LightMapper"
+  ],
   "lighting/LightProbeGrid.js": [
    "LightProbeGrid"
   ],
@@ -846,8 +849,12 @@
   ],
   "lighting/vxgi/VXGIConeTracer.js": [
    "createConeTracer",
+   "gather",
    "intersectVolume",
    "sampleDirectional"
+  ],
+  "lighting/vxgi/VXGIIrradiance.js": [
+   "vxgiIrradiance"
   ],
   "lighting/vxgi/VXGINode.js": [
    "default",
@@ -856,7 +863,8 @@
   "lighting/vxgi/VXGISceneCollector.js": [
    "TRIANGLE_STRIDE",
    "collectSceneTriangles",
-   "computeSceneBounds"
+   "computeSceneBounds",
+   "computeSolidVoxels"
   ],
   "lighting/vxgi/VXGIVolume.js": [
    "VXGIVolume"
@@ -965,6 +973,9 @@
   ],
   "loaders/IESLoader.js": [
    "IESLoader"
+  ],
+  "loaders/JXLLoader.js": [
+   "JXLLoader"
   ],
   "loaders/KMZLoader.js": [
    "KMZLoader"
@@ -1114,6 +1125,10 @@
    "MaterialXLog",
    "MaterialXLogCodes"
   ],
+  "loaders/materialx/MaterialXNodeDefs.js": [
+   "getNodeDefNames",
+   "resolveNodeDef"
+  ],
   "loaders/materialx/MaterialXNodeInterfaceRegistry.js": [
    "default"
   ],
@@ -1122,9 +1137,11 @@
   ],
   "loaders/materialx/MaterialXSurfaceMappings.js": [
    "MaterialXSurfaceMappings",
+   "applyDisplacement",
    "applyGltfPbrSurface",
    "applyOpenPbrSurface",
    "applyStandardSurface",
+   "applySurfaceUnlit",
    "getSupportedSurfaceCategories",
    "getSurfaceMapper",
    "mappedGltfPbrInputs",
@@ -1133,9 +1150,11 @@
    "surfaceMapperRegistry"
   ],
   "loaders/materialx/MaterialXUtils.js": [
+   "TEXTURE_ADDRESS_MODE_WRAPPING",
    "getComponentCountForType",
    "isBooleanNode",
    "normalizeSpaceName",
+   "resolveTextureAddressMode",
    "toBooleanNode",
    "toVec3Channels"
   ],
@@ -1370,6 +1389,17 @@
   ],
   "physics/RapierPhysics.js": [
    "RapierPhysics"
+  ],
+  "pipelines/MeshletDrawingPipeline.js": [
+   "MeshletBatch",
+   "MeshletDrawingPipeline",
+   "cacheAttributes",
+   "createDebugMaterial",
+   "createDrawMaterial",
+   "createOcclusion"
+  ],
+  "pipelines/VisibilityBufferDrawingPipeline.js": [
+   "VisibilityBufferDrawingPipeline"
   ],
   "postprocessing/AfterimagePass.js": [
    "AfterimagePass"
@@ -1901,6 +1931,9 @@
   "tsl/display/hashBlur.js": [
    "hashBlur"
   ],
+  "tsl/display/lensDirt.js": [
+   "lensDirt"
+  ],
   "tsl/display/radialBlur.js": [
    "radialBlur"
   ],
@@ -1914,7 +1947,8 @@
   ],
   "tsl/lighting/LightProbeGridNode.js": [
    "ATLAS_PADDING",
-   "LightProbeGridNode"
+   "LightProbeGridNode",
+   "lightProbeGridIrradiance"
   ],
   "tsl/lighting/data/AmbientLightDataNode.js": [
    "default"
@@ -1997,6 +2031,7 @@
    "mergeGeometries",
    "mergeGroups",
    "mergeVertices",
+   "remapAttribute",
    "toCreasedNormals",
    "toTrianglesDrawMode"
   ],
@@ -2032,6 +2067,12 @@
   ],
   "utils/LDrawUtils.js": [
    "LDrawUtils"
+  ],
+  "utils/MeshletGeometryUtils.js": [
+   "MAX_LODS",
+   "MESHLET_SIZE",
+   "createMeshlets",
+   "ready"
   ],
   "utils/SceneOptimizer.js": [
    "SceneOptimizer"
@@ -2071,6 +2112,9 @@
   ],
   "utils/WorkerPool.js": [
    "WorkerPool"
+  ],
+  "utils/unwrapUVs.js": [
+   "unwrapUVs"
   ],
   "webxr/ARButton.js": [
    "ARButton"
@@ -2186,7 +2230,6 @@
    "CubeRefractionMapping",
    "CubeTexture",
    "CubeTextureLoader",
-   "CubeUVReflectionMapping",
    "CubicBezierCurve",
    "CubicBezierCurve3",
    "CubicInterpolant",
@@ -2558,6 +2601,8 @@
    "createCanvasElement",
    "createElementNS",
    "error",
+   "floorPowerOfTwo",
+   "generateUUID",
    "getByteLength",
    "getConsoleFunction",
    "getUnlitUniformColorSpace",
@@ -2571,33 +2616,97 @@
    "yieldToMain"
   ],
   "three/tsl": [
+   "AONode",
+   "AnalyticLightNode",
+   "ArrayElementNode",
+   "ArrayNode",
+   "AssignNode",
+   "AtomicFunctionNode",
+   "AttributeNode",
+   "BRDF_EON",
    "BRDF_GGX",
    "BRDF_Lambert",
    "BRDF_Sheen",
+   "BarrierNode",
    "BasicPointShadowFilter",
    "BasicShadowFilter",
+   "BitcastNode",
+   "BitcountNode",
+   "BlendMode",
    "Break",
+   "BufferAttributeNode",
+   "BufferNode",
+   "BuiltinNode",
+   "BumpMapNode",
+   "BypassNode",
+   "ChainMap",
+   "ClippingNode",
+   "CodeNode",
+   "Color4",
+   "ColorSpaceNode",
+   "ComputeBuiltinNode",
+   "ComputeNode",
+   "ConditionalNode",
    "Const",
+   "ConstNode",
+   "ContextNode",
    "Continue",
+   "ConvertNode",
+   "CubeRenderTarget",
+   "CubeTextureNode",
    "DFGLUT",
    "D_GGX",
    "D_GGX_Anisotropic",
+   "DebugNode",
    "Discard",
+   "EON_DirectionalAlbedo",
    "EPSILON",
    "EnvironmentBRDF",
+   "EventNode",
+   "ExpressionNode",
    "F_Schlick",
+   "FlipNode",
    "Fn",
+   "FrontFacingNode",
+   "FunctionCallNode",
+   "FunctionNode",
+   "FunctionOverloadingNode",
    "HALF_PI",
    "INFINITY",
    "If",
+   "IndexNode",
+   "InputNode",
+   "InspectorBase",
+   "InspectorNode",
+   "IrradianceNode",
+   "IsolateNode",
+   "JoinNode",
    "LTC_Evaluate",
    "LTC_Evaluate_Volume",
    "LTC_Uv",
+   "LightingContextNode",
+   "LightingNode",
+   "LightsNode",
    "Loop",
+   "LoopNode",
+   "MRTNode",
+   "MaterialNode",
+   "MaterialReferenceNode",
+   "MathNode",
+   "MaxMipLevelNode",
+   "MemberNode",
+   "ModelNode",
+   "Node",
    "NodeAccess",
+   "NodeError",
+   "NodeMaterial",
+   "NodeMaterialObserver",
    "NodeShaderStage",
    "NodeType",
    "NodeUpdateType",
+   "NodeUtils",
+   "NormalMapNode",
+   "Object3DNode",
    "OnAfterObjectUpdate",
    "OnAfterRenderPipeline",
    "OnBeforeFrameUpdate",
@@ -2607,22 +2716,84 @@
    "OnFrameUpdate",
    "OnMaterialUpdate",
    "OnObjectUpdate",
+   "OperatorNode",
+   "OutputStructNode",
+   "OverrideContextNode",
    "PCFShadowFilter",
    "PI",
    "PI2",
+   "PMREMGenerator",
+   "PMREMNode",
+   "PackFloatNode",
+   "Packed4x8IntegerNode",
+   "ParameterNode",
+   "PassNode",
+   "PointLightNode",
    "PointShadowFilter",
+   "PointShadowNode",
+   "PointUVNode",
+   "PropertyNode",
+   "QuadMesh",
+   "RTTNode",
+   "RangeNode",
+   "ReferenceAttributeNode",
+   "ReferenceBaseNode",
+   "ReferenceElementNode",
+   "ReferenceNode",
+   "ReflectorNode",
+   "RenderOutputNode",
+   "RendererReferenceNode",
+   "RendererUtils",
    "Return",
+   "RotateNode",
+   "SampleNode",
    "Schlick_to_F0",
+   "ScreenNode",
+   "SetNode",
    "ShaderNode",
+   "ShadowBaseNode",
+   "ShadowNode",
+   "SplitNode",
    "Stack",
+   "StackNode",
+   "StackTrace",
+   "StorageArrayElementNode",
+   "StorageBufferAttribute",
+   "StorageBufferNode",
+   "StorageInstancedBufferAttribute",
+   "StorageTexture3DNode",
+   "StorageTextureNode",
+   "StructNode",
+   "StructTypeNode",
+   "SubBuildNode",
+   "SubgroupFunctionNode",
    "Switch",
    "TBNViewMatrix",
    "TWO_PI",
+   "Texture3DNode",
+   "TextureNode",
+   "TextureSizeNode",
+   "Three_TSL",
+   "ToneMappingNode",
+   "ToonOutlinePassNode",
+   "UniformArrayNode",
+   "UniformGroupNode",
+   "UniformNode",
+   "UnpackFloatNode",
+   "UserDataNode",
    "VSMShadowFilter",
    "V_GGX_SmithCorrelated",
    "V_GGX_SmithCorrelated_Anisotropic",
    "Var",
-   "VarIntent",
+   "VarNode",
+   "VaryingNode",
+   "VelocityNode",
+   "VertexColorNode",
+   "ViewportDepthNode",
+   "ViewportDepthTextureNode",
+   "ViewportSharedTextureNode",
+   "ViewportTextureNode",
+   "WorkgroupInfoNode",
    "abs",
    "acesFilmicToneMapping",
    "acos",
@@ -2755,6 +2926,7 @@
    "difference",
    "diffuseColor",
    "diffuseContribution",
+   "diffuseRoughness",
    "directPointLight",
    "directionToColor",
    "directionToFaceDirection",
@@ -2801,6 +2973,8 @@
    "getScreenPositionFromClip",
    "getShIrradianceAt",
    "getTextureIndex",
+   "getTextureType",
+   "getTypeFromLength",
    "getViewPosition",
    "globalId",
    "glsl",
@@ -2810,6 +2984,8 @@
    "greaterThanEqual",
    "hardwareClipping",
    "hash",
+   "hashArray",
+   "hashString",
    "highpModelNormalViewMatrix",
    "highpModelViewMatrix",
    "hue",
@@ -2835,6 +3011,8 @@
    "iridescence",
    "iridescenceIOR",
    "iridescenceThickness",
+   "isArrayAsParameter",
+   "isBackgroundDepth",
    "isolate",
    "ivec2",
    "ivec3",
@@ -2874,6 +3052,7 @@
    "materialClearcoatNormal",
    "materialClearcoatRoughness",
    "materialColor",
+   "materialDiffuseRoughness",
    "materialDispersion",
    "materialEmissive",
    "materialEnvIntensity",
@@ -2910,6 +3089,7 @@
    "max",
    "maxMipLevel",
    "mediumpModelViewMatrix",
+   "mergeContext",
    "metalness",
    "min",
    "mix",
@@ -2925,6 +3105,7 @@
    "modelViewProjection",
    "modelWorldMatrix",
    "modelWorldMatrixInverse",
+   "morphColor",
    "morphReference",
    "mrt",
    "mul",
@@ -2950,6 +3131,7 @@
    "mx_modulo",
    "mx_multiply",
    "mx_noise_float",
+   "mx_noise_vec2",
    "mx_noise_vec3",
    "mx_noise_vec4",
    "mx_place2d",
@@ -2983,11 +3165,11 @@
    "nodeArray",
    "nodeImmutable",
    "nodeObject",
-   "nodeObjectIntent",
+   "nodeObjectAssignable",
    "nodeObjects",
    "nodeProxy",
+   "nodeProxyAssignable",
    "nodeProxyConstructor",
-   "nodeProxyIntent",
    "normalFlat",
    "normalGeometry",
    "normalLocal",
@@ -3054,6 +3236,7 @@
    "pow3",
    "pow4",
    "premultiplyAlpha",
+   "projectionDepth",
    "property",
    "quadBroadcast",
    "quadSwapDiagonal",
@@ -3065,6 +3248,8 @@
    "rangeFogFactor",
    "reciprocal",
    "reference",
+   "reference$1",
+   "referenceAttribute",
    "referenceBuffer",
    "reflect",
    "reflectVector",
@@ -3186,9 +3371,6 @@
    "transformNormalByInverseViewMatrix",
    "transformNormalByViewMatrix",
    "transformNormalToView",
-   "transformedClearcoatNormalView",
-   "transformedNormalView",
-   "transformedNormalWorld",
    "transmission",
    "transpose",
    "triNoise3D",
@@ -3251,6 +3433,7 @@
    "workgroupArray",
    "workgroupBarrier",
    "workgroupId",
+   "workingLuminanceCoefficients",
    "workingToColorSpace",
    "xor"
   ],
@@ -3362,7 +3545,6 @@
    "CubeTexture",
    "CubeTextureLoader",
    "CubeTextureNode",
-   "CubeUVReflectionMapping",
    "CubicBezierCurve",
    "CubicBezierCurve3",
    "CubicInterpolant",
@@ -3594,6 +3776,7 @@
    "NodeFunctionInput",
    "NodeLoader",
    "NodeMaterial",
+   "NodeMaterialInstance",
    "NodeMaterialLoader",
    "NodeMaterialObserver",
    "NodeObjectLoader",
@@ -3720,6 +3903,7 @@
    "RectAreaLightNode",
    "RedFormat",
    "RedIntegerFormat",
+   "ReferenceAttributeNode",
    "ReferenceBaseNode",
    "ReferenceElementNode",
    "ReferenceNode",
@@ -3780,6 +3964,7 @@
    "SrcColorFactor",
    "StackNode",
    "StackTrace",
+   "StandardDrawingPipeline",
    "StandardNodeLibrary",
    "StaticCopyUsage",
    "StaticDrawUsage",
@@ -3888,13 +4073,14 @@
    "defaultBuildStages",
    "defaultShaderStages",
    "error",
+   "floorPowerOfTwo",
+   "generateUUID",
    "getByteLength",
    "getConsoleFunction",
    "getUnlitUniformColorSpace",
    "isTypedArray",
    "log",
    "mergeUniforms",
-   "mx_noise_vec2",
    "probeAsync",
    "setConsoleFunction",
    "shaderStages",
@@ -3904,5 +4090,5 @@
    "yieldToMain"
   ]
  },
- "three": "0.186.1"
+ "three": "0.187.0"
 }
